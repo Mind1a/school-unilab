@@ -2,9 +2,6 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/features/i18n/routing";
 import { notFound } from "next/navigation";
-import Header from "@/features/common/components/composites/Header";
-import { ResponsiveContainer } from "@/components/ResponsiveContainer";
-import Footer from "@/features/common/components/composites/Footer";
 
 export default async function LocaleLayout({
   children,
@@ -33,11 +30,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider>
       <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1">
-          <ResponsiveContainer>{children}</ResponsiveContainer>
-        </main>
-        <Footer />
+        <main className="flex-1">{children}</main>
       </div>
     </NextIntlClientProvider>
   );
