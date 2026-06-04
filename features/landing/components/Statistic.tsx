@@ -1,3 +1,5 @@
+import DiscoverProjects from "./DiscoverProjects";
+
 const StatisticChild = () => {
   return (
     <div>
@@ -9,7 +11,7 @@ const StatisticChild = () => {
 const Statistic = () => {
   return (
     <div>
-      <StatisticChild />
+      <DiscoverProjects />
     </div>
   );
 };
