@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -20,24 +20,24 @@
 } */
 
 @font-face {
-  font-family: 'Nato regular';
-  src: url('/font/NotoSansGeorgian-Regular.ttf') format(truetype);
+  font-family: "Nato regular";
+  src: url("/font/NotoSansGeorgian-Regular.ttf") format(truetype);
 }
 
 @font-face {
-  font-family: 'Nato bold';
-  src: url('/font/NotoSansGeorgian-Bold.ttf') format(truetype);
+  font-family: "Nato bold";
+  src: url("/font/NotoSansGeorgian-Bold.ttf") format(truetype);
 }
 
 @font-face {
-  font-family: 'Nato semiBold';
-  src: url('/font/NotoSansGeorgian-SemiBold.ttf') format(truetype);
+  font-family: "Nato semiBold";
+  src: url("/font/NotoSansGeorgian-SemiBold.ttf") format(truetype);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Nato regular', sans-serif;
+  font-family: "Nato regular", sans-serif;
 }
 
 @theme {
@@ -55,5 +55,16 @@ body {
     backdrop-filter: blur(14.3px);
     -webkit-backdrop-filter: blur(14.3px);
     border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 }
