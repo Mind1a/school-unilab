@@ -1,9 +1,11 @@
+import AboutUs from "./AboutUs";
 import Statistic from "./Statistic";
 
 const Landing = () => {
   return (
     <div>
-      <Statistic />
+      {/* <Statistic /> */}
+      <AboutUs />
     </div>
   );
 };
