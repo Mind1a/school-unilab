@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/features/query/QueryProvider";
-// import { ResponsiveContainer } from "@/components/ResponsiveContainer";
+import { ResponsiveContainer } from "@/components/ResponsiveContainer";
 import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
@@ -29,9 +29,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <QueryProvider>
-          {/* <ResponsiveContainer>{children}</ResponsiveContainer> */}
-          {children}
-          <Toaster
+          <ResponsiveContainer>{children}</ResponsiveContainer>
+          <Toaster 
             position="bottom-right"
             toastOptions={{
               style: {
