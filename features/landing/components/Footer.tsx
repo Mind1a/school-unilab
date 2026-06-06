@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="relative ">
-        <div className="absolute inset-x-0 top-0 max-w-335 mx-auto w-full h-0 z-0 pointer-events-none">
-          <div className="hidden md:flex absolute -top-20 right-0 pr-4 md:pr-7.75 xl:pr-13 2xl:pr-0 items-center gap-4">
+      <div className="relative max-w-360 mx-auto">
+        <div className="absolute inset-x-0 top-0 w-full h-0 z-0 pointer-events-none">
+          <div className="hidden md:flex absolute -top-20 right-0 mr-4 md:mr-7.75 xl:mr-13 items-center gap-4">
             <div className="flex items-center gap-4">
               <div className="relative w-25 h-25 drop-shadow-[4px_10px_4px_rgba(0,0,0,0.25)]">
                 <svg viewBox="0 0 100 80">
@@ -48,11 +48,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="filter-[drop-shadow(0_-6px_2px_#0000001A)] z-50">
+        <div className="filter-[drop-shadow(-6px_-6px_2px_#0000001A)] z-50">
           <div
             className="relative  flex flex-col z-50 bg-[#4D7CCE]
                     border-4 border-black border-b-transparent
                     border-r-transparent
+
                     px-3.5 py-6 md:px-7 md:py-8.5  xl:p-12.5
                     [clip-path:polygon(41px_0%,100%_0%,100%_100%,0%_100%,0%_40px)]
                     md:[clip-path:polygon(84px_0%,100%_0%,100%_100%,0%_100%,0%_52px)]
@@ -94,12 +95,12 @@ export default function Footer() {
                     width={100}
                     height={100}
                     src={'/images/logo/logo.png'}
-                    className="w-25.25 h-16 md:w-36 md:h-25 xl:w-47.5 xl:h-30"
+                    className="w-25.25 h-16 md:w-36 md:h-25 xl:w-47.5 xl:h-29.75"
                     alt="Unilab school logo"
                   />
 
                   <div className="flex items-center gap-2.5">
-                    <Image width={100} height={100} src={'/images/footerImages/svg/unilab.svg'} className="w-11.75 h-15.25 md:w-14.25 md:h-[73.79px]" alt="Unilab logo" />
+                    <Image width={100} height={100} src={'/images/footerImages/svg/unilab.svg'} className="w-11.75 h-15.25 md:w-14.25 md:h-18.5" alt="Unilab logo" />
                     <Image width={100} height={100} src={'/images/footerImages/svg/iliauni.svg'} className="w-16 h-16 md:w-19.25 md:h-19.25" alt="Iliauni logo" />
                   </div>
                 </div>
@@ -107,17 +108,17 @@ export default function Footer() {
                 <div className="flex flex-col gap-4 text-black">
                   <h2 className="text-[20px] font-bold leading-6">საკონტაქტო ინფორმაცია</h2>
                   <div className="flex flex-col gap-4">
-                    <Link href={'/'} className="flex items-center gap-3 leading-5 hover:underline">
+                    <Link href={'/'} className="flex items-center gap-3 leading-5 ">
                       <Image width={24} height={24} src={'/images/footerImages/svg/phone.svg'} alt="Phone icon" />
                       +995 xxx xxx xxx
                     </Link>
 
-                    <Link href={'/'} className="flex items-center gap-3 leading-5 hover:underline">
+                    <Link href={'/'} className="flex items-center gap-3 leading-5">
                       <Image width={24} height={24} src={'/images/footerImages/svg/gmail.svg'} alt="Gmail icon" />
                       infounilab@iliauni.edu.ge
                     </Link>
 
-                    <Link href={'/'} className="flex items-center gap-3 leading-5 hover:underline">
+                    <Link href={'/'} className="flex items-center gap-3 leading-5">
                       <Image width={24} height={24} src={'/images/footerImages/svg/map.svg'} alt="Location icon" />
                       გიორგი წერეთლის 1, თბილისი
                     </Link>
