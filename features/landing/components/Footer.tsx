@@ -1,12 +1,91 @@
 import Image from "next/image"
 import Link from "next/link";
 
+
+
+
+type ContactDaTatype = {
+  id: number
+  label: string
+  href: string
+  image: string
+  alt: string
+}
+
+type SocialDataType = {
+  id: number
+  href: string
+  image: string
+  alt: string
+}
+
+
+const CONTACT_DATA: ContactDaTatype[] = [
+  {
+    id: 1,
+    label: "+995 xxx xxx xxx",
+    href: "tel:+995 xxx xxx xxx",
+    image: "/images/footerImages/svg/phone.svg",
+    alt: "Phone Icon"
+  },
+  {
+    id: 2,
+    label: "infounilab@iliauni.edu.ge",
+    href: "mailto:infounilab@iliauni.edu.ge",
+    image: "/images/footerImages/svg/gmail.svg",
+    alt: "Gmail Icon"
+  },
+  {
+    id: 3,
+    label: "გიორგი წერეთლის 1, თბილისი",
+    href: "/",
+    image: "/images/footerImages/svg/map.svg",
+    alt: "Location Icon"
+  }
+]
+
+
+const SOCIAL_ICONS: SocialDataType[] = [
+  {
+    id: 1,
+    href: "/",
+    image: "/images/footerImages/svg/facebook.svg",
+    alt: "Facebook icon"
+  },
+  {
+    id: 2,
+    href: "/",
+    image: "/images/footerImages/svg/instagram.svg",
+    alt: "Instagram icon"
+  },
+  {
+    id: 3,
+    href: "/",
+    image: "/images/footerImages/svg/tiktok.svg",
+    alt: "Tiktok icon"
+  },
+  {
+    id: 4,
+    href: "/",
+    image: "/images/footerImages/svg/linkedin.svg",
+    alt: "Linkedin icon"
+  },
+  {
+    id: 5,
+    href: "/",
+    image: "/images/footerImages/svg/youtube.svg",
+    alt: "Youtube icon"
+  }
+]
+
+
+
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="relative max-w-360 mx-auto">
+      <div className="relative w-full mx-auto">
         <div className="absolute inset-x-0 top-0 w-full h-0 z-0 pointer-events-none">
-          <div className="hidden md:flex absolute -top-20 right-0 mr-4 md:mr-7.75 xl:mr-13 items-center gap-4">
+          <div className="hidden md:flex absolute -top-20 right-0 mr-4 md:mr-7.75 xl:mr-24 items-center gap-4">
             <div className="flex items-center gap-4">
               <div className="relative w-25 h-25 drop-shadow-[4px_10px_4px_rgba(0,0,0,0.25)]">
                 <svg viewBox="0 0 100 80">
@@ -50,7 +129,7 @@ export default function Footer() {
 
         <div className="filter-[drop-shadow(-6px_-6px_2px_#0000001A)] z-50">
           <div
-            className="relative  flex flex-col z-50 bg-[#4D7CCE]
+            className="relative flex flex-col z-50 bg-[#4D7CCE]
                     border-4 border-black border-b-transparent
                     border-r-transparent
 
@@ -106,22 +185,18 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col gap-4 text-black">
-                  <h2 className="text-[20px] font-bold leading-6">საკონტაქტო ინფორმაცია</h2>
+                  <h2 className="text-[20px] leading-10 font-mecomisce-regular font-normal">საკონტაქტო ინფორმაცია</h2>
                   <div className="flex flex-col gap-4">
-                    <Link href={'/'} className="flex items-center gap-3 leading-5 ">
-                      <Image width={24} height={24} src={'/images/footerImages/svg/phone.svg'} alt="Phone icon" />
-                      +995 xxx xxx xxx
-                    </Link>
-
-                    <Link href={'/'} className="flex items-center gap-3 leading-5">
-                      <Image width={24} height={24} src={'/images/footerImages/svg/gmail.svg'} alt="Gmail icon" />
-                      infounilab@iliauni.edu.ge
-                    </Link>
-
-                    <Link href={'/'} className="flex items-center gap-3 leading-5">
-                      <Image width={24} height={24} src={'/images/footerImages/svg/map.svg'} alt="Location icon" />
-                      გიორგი წერეთლის 1, თბილისი
-                    </Link>
+                    {
+                      CONTACT_DATA.map(contact => (
+                        <Link key={contact.id} className="flex  items-center gap-3 leading-5" href={contact.href}>
+                          <Image width={24} height={24} src={contact.image} alt={contact.alt} />
+                          {
+                            contact.label
+                          }
+                        </Link>
+                    ))
+                    }
                   </div>
                 </div>
 
@@ -136,11 +211,12 @@ export default function Footer() {
                 </p>
 
                 <div className="flex items-center gap-6">
-                  <Link href={'/'}><Image width={40} height={40} src={'/images/footerImages/svg/facebook.svg'} alt="Facebook icon" /></Link>
-                  <Link href={'/'}><Image width={40} height={40} src={'/images/footerImages/svg/instagram.svg'} alt="Instagram icon" /></Link>
-                  <Link href={'/'}><Image width={40} height={40} src={'/images/footerImages/svg/tiktok.svg'} alt="Tiktok icon" /></Link>
-                  <Link href={'/'}><Image width={40} height={40} src={'/images/footerImages/svg/linkedin.svg'} alt="Linkedin icon" /></Link>
-                  <Link href={'/'}><Image width={40} height={40} src={'/images/footerImages/svg/youtube.svg'} alt="Youtube icon" /></Link>
+
+                  {
+                    SOCIAL_ICONS.map(social => (
+                      <Link key={social.id} href={social.href}><Image width={40} height={40} src={social.image} alt={social.alt} /></Link>
+                    ))
+                  }
                 </div>
 
               </div>
