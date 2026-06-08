@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: "Mecomisce";
-  src: url("/font/TFMecomicse-Regular-59522229166.otf") format(truetype);
+  src: url("/font/TFMecomicse-Regular-59522229166.otf") format(opentype);
   font-style: regular;
 }
 
