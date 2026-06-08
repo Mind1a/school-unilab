@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, ExternalLinkIcon } from "lucide-react";
 
 export const projects = [
   {
@@ -30,7 +29,7 @@ const DiscoverProjects = () => {
       <div className="flex flex-col items-center w-full h-full">
         {/* name */}
         <div className="flex justify-start items-center md:justify-center w-full h-12 md:h-12 lg:h-14.5">
-          <h2 className="text-[24px] leading-6 md:text-[32px] lg:text-[42px]">
+          <h2 className="text-[24px] leading-6 md:text-[32px] lg:text-[48px]">
             აღმოაჩინე ახალი პროექტები
           </h2>
         </div>
@@ -48,7 +47,7 @@ const DiscoverProjects = () => {
           >
             ყველა პროექტის ნახვა
             <Image
-              src="/images/discover-projects/arrow.png"
+              src="/images/discover-projects/arrow.svg"
               alt="arrow right"
               width={24}
               height={24}
@@ -61,12 +60,12 @@ const DiscoverProjects = () => {
   );
 };
 
-interface Project {
+type Project = {
   id: number;
   image: string;
   title: string;
   date: string;
-}
+};
 
 const Card = ({ project }: { project: Project }) => {
   return (
@@ -86,21 +85,28 @@ const Card = ({ project }: { project: Project }) => {
             width={20}
             height={20}
           />
-          <p className="ml-2">კურსები</p>
+          <p className="ml-2 text-[16px]">კურსები</p>
         </div>
       </div>
 
       <div className="flex flex-col justify-start w-70.25 h-32 md:w-60.75 md:h-30 lg:w-96 lg:h-40 px-4 lg:px-6 rounded-b-2xl">
         <div className="w-60.25 h-14 md:w-52.75 lg:w-82 lg:h-16 mt-4 md:mt-3 lg:mt-6  bg-white">
-          <h3 className="text-base md:text-sm lg:text-xl">{project.title}</h3>
+          <h3 className="text-[16px] md:text-[14px] lg:text-[20px]">
+            {project.title}
+          </h3>
         </div>
 
         <div className="flex justify-between w-60.25 h-6 md:w-52.75 lg:w-82 mt-4 lg:mt-6 bg-white">
           <Link
             href={`#`}
-            className="flex text-sm md:text-xs lg:text-base text-[rgba(77,124,206,1)]"
+            className="flex text-[14px] text-[rgba(77,124,206,1)]"
           >
-            <ExternalLinkIcon />
+            <Image
+              src="/images/discover-projects/view-more.svg"
+              alt="view more"
+              width={20}
+              height={20}
+            />
             <p className="ml-2">დეტალურად</p>
           </Link>
           <p className="text-[12px] text-[rgba(102,102,102,1)]">
