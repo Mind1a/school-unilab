@@ -129,7 +129,7 @@ export default function Footer() {
 
         <div className="filter-[drop-shadow(-6px_-6px_2px_#0000001A)] z-50">
           <div
-            className="relative flex flex-col z-50 bg-[#4D7CCE]
+            className="relative w-full flex flex-col z-50 bg-[#4D7CCE]
                     border-4 border-black border-b-transparent
                     border-r-transparent
 
@@ -185,7 +185,7 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col gap-4 text-black">
-                  <h2 className="text-[20px] leading-10 font-mecomisce-regular font-normal">საკონტაქტო ინფორმაცია</h2>
+                  <h2 className="text-[20px] leading-10 font-mecomisce">საკონტაქტო ინფორმაცია</h2>
                   <div className="flex flex-col gap-4">
                     {
                       CONTACT_DATA.map(contact => (
