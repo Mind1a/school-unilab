@@ -42,7 +42,7 @@ const DiscoverProjects = () => {
     <section className="flex justify-center w-97.5 min-h-100 md:w-208.5 md:min-h-95 lg:w-full lg:min-h-130 mt-18 lg:mt-14 px-4.5 md:px-[24.5px] lg:px-30 pb-4">
       <div className="flex flex-col items-center w-full h-full">
         <header className="flex justify-start items-center md:justify-center w-full h-12 md:h-12 lg:h-14.5">
-          <h2 className="text-[24px] leading-6 md:text-[32px] lg:text-[48px]">
+          <h2 className="text-[24px] leading-6 md:text-[32px] lg:text-[48px] font-mecomisce">
             აღმოაჩინე ახალი პროექტები
           </h2>
         </header>
@@ -56,7 +56,7 @@ const DiscoverProjects = () => {
         <div className="flex items-center w-58.5 h-6 md:w-71.25 lg:w-83.25 mt-6 lg:mt-10">
           <Link
             href="#"
-            className="flex items-center text-[16px] md:text-[20px] lg:text-[24px] text-black"
+            className="flex items-center text-[16px] md:text-[20px] lg:text-[24px] text-black font-mecomisce"
           >
             <span>ყველა პროექტის ნახვა</span>
 

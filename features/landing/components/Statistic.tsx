@@ -23,7 +23,7 @@ const StatisticChild = (props: StatisticChildProps) => {
 
 const Statistic = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-4 lg:gap-6 my-18 lg:my-40 mx-4 md:mx-6 lg:mx-40">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-4 lg:gap-6 my-18 lg:my-40 mx-4 md:mx-6 lg:mx-40 font-mecomisce">
       <StatisticChild
         image="images/landing/computer.png"
         alt="computer"

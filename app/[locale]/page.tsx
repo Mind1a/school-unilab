@@ -1,9 +1,9 @@
-import DiscoverProjects from "@/features/landing/components/DiscoverProjects";
+import Landing from "@/features/landing/components/Landing";
 
 export default function Home() {
   return (
     <div className="flex w-full justify-center">
-      <DiscoverProjects />
+      <Landing />
     </div>
   );
 }
