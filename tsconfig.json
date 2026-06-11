@@ -27,9 +27,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.d.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, "app/[locale]/global-not-found"  ],
+    "**/*.mts",
+    "app/[locale]/global-not-found"
+  ],
   "exclude": ["node_modules"]
 }

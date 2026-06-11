@@ -1,5 +1,9 @@
-import Partner from "@/features/landing/components/Partner";
+import Landing from "@/features/landing/components/Landing";
 
 export default function Home() {
-  return <Partner />;
+  return (
+    <div className="flex w-full justify-center">
+      <Landing />
+    </div>
+  );
 }
