@@ -6,8 +6,8 @@ const Landing = () => {
   return (
     <div>
       <DiscoverProjects />
-      <Statistic />
       <AboutUs />
+      <Statistic />
     </div>
   );
 };
