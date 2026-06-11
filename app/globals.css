@@ -21,13 +21,11 @@ body {
   color: var(--foreground);
 }
 
-
 @layer utilities {
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.28);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(14.3px);
-    -webkit-backdrop-filter: blur(14.3px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+  .font-case {
+    -moz-font-feature-settings: "case";
+    -webkit-font-feature-settings: "case";
+    font-feature-settings: "case";
+    font-family: var(--font-mecomisce), sans-serif;
   }
 }
