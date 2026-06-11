@@ -1,9 +1,15 @@
+import AboutUs from "./AboutUs";
+import DiscoverProjects from "./DiscoverProjects";
+import Partner from "./Partner";
 import Statistic from "./Statistic";
 
 const Landing = () => {
   return (
-    <div>
+    <div className="w-full min-w-0">
+      <DiscoverProjects />
+      <AboutUs />
       <Statistic />
+      <Partner />
     </div>
   );
 };
