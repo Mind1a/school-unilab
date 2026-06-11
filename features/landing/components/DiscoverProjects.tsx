@@ -39,26 +39,26 @@ type Project = {
 
 const DiscoverProjects = () => {
   return (
-    <section className="flex justify-center w-97.5 min-h-100 md:w-208.5 md:min-h-95 lg:w-full lg:min-h-130 mt-18 lg:mt-14 px-4.5 md:px-[24.5px] lg:px-30 pb-4">
-      <div className="flex flex-col items-center w-full h-full">
-        <header className="flex justify-start items-center md:justify-center w-full h-12 md:h-12 lg:h-14.5">
-          <h2 className="text-[24px] leading-6 md:text-[32px] lg:text-[48px] font-mecomisce">
-            აღმოაჩინე ახალი პროექტები
+    <section className="mt-18 flex w-full min-w-0 justify-center px-4 pb-4 md:px-6 lg:mt-14 lg:min-h-130 lg:px-10 xl:px-30">
+      <div className="flex w-full max-w-300 min-w-0 flex-col items-center">
+        <header className="flex min-h-12 w-full items-center justify-center lg:min-h-14.5">
+          <h2 className="font-mecomisce text-[24px] leading-7 md:text-[32px] lg:text-[48px] lg:leading-none">
+            {"აღმოაჩინე ახალი პროექტები".toUpperCase()}
           </h2>
         </header>
 
-        <ul className="flex flex-row w-full max-w-300 h-74 md:h-67 lg:h-92 overflow-x-auto md:overflow-visible scrollbar-hide mt-4 md:mt-6 lg:mt-10 gap-4 md:gap-5.5 lg:gap-6">
+        <ul className="scrollbar-hide mt-4 flex w-full max-w-full gap-4 overflow-x-auto pb-3 md:mt-6 md:gap-5.5 lg:mt-10 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:pb-0">
           {projects.map((project) => (
             <Card key={project.id} project={project} />
           ))}
         </ul>
 
-        <div className="flex items-center w-58.5 h-6 md:w-71.25 lg:w-83.25 mt-6 lg:mt-10">
+        <div className="mt-6 flex w-full items-center justify-center lg:mt-10">
           <Link
             href="#"
-            className="flex items-center text-[16px] md:text-[20px] lg:text-[24px] text-black font-mecomisce"
+            className="font-mecomisce flex items-center text-[16px] text-black md:text-[20px] lg:text-[24px]"
           >
-            <span>ყველა პროექტის ნახვა</span>
+            <span>{"ყველა პროექტის ნახვა".toUpperCase()}</span>
 
             <Image
               src="/images/discover-projects/arrow.svg"
@@ -76,7 +76,7 @@ const DiscoverProjects = () => {
 
 const Card = ({ project }: { project: Project }) => {
   return (
-    <li className="first:ml-1 last:mr-1 w-70.25 h-72 md:w-60.75 md:h-65 lg:w-96 lg:h-90 shrink-0">
+    <li className="h-72 w-70.25 shrink-0 first:ml-1 last:mr-1 md:h-65 md:w-60.75 lg:h-90 lg:w-full lg:first:ml-0 lg:last:mr-0">
       <article className="flex flex-col items-center w-full h-full rounded-2xl overflow-hidden bg-white border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)]">
         <div className="relative w-full h-40 md:h-35 lg:h-50 overflow-hidden">
           <Image

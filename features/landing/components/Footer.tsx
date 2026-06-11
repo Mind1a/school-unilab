@@ -197,8 +197,8 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col gap-4 text-black">
-                  <h2 className="text-[20px] leading-10 font-case">
-                    საკონტაქტო ინფორმაცია
+                  <h2 className="text-[20px] leading-10 font-mecomisce">
+                    {"საკონტაქტორ ინფორმაცია".toUpperCase()}
                   </h2>
                   <div className="flex flex-col gap-4">
                     {CONTACT_DATA.map((contact) => (

@@ -16,7 +16,7 @@ const StatisticChild = (props: StatisticChildProps) => {
       <h2 className="text-[40px] lg:text-[64px] font-bold text-[#DB5353]">
         {props.quantity}
       </h2>
-      <p className="text-[24px] lg:text-[32px]">{props.title}</p>
+      <p className="text-[24px] lg:text-[32px]">{props.title.toUpperCase()}</p>
     </div>
   );
 };
