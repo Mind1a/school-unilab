@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { QueryProvider } from "@/features/query/QueryProvider";
-import localFont from "next/font/local"
-
+import localFont from "next/font/local";
 import { Toaster } from "react-hot-toast";
-
 
 const noto = localFont({
   variable: "--font-noto",
@@ -13,10 +11,10 @@ const noto = localFont({
     {
       path: "../public/font/NotoSansGeorgian-Regular.ttf",
       weight: "400",
-      style: "normal"
+      style: "normal",
     },
-  ]
-})
+  ],
+});
 
 const mecomisce = localFont({
   variable: "--font-mecomisce",
@@ -25,10 +23,10 @@ const mecomisce = localFont({
     {
       path: "../public/font/TFMecomicse-Regular-59522229166.otf",
       weight: "400",
-      style: "normal"
-    }
-  ]
-})
+      style: "normal",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
