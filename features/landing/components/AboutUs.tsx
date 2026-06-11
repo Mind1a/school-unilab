@@ -44,7 +44,7 @@ const AboutUs = () => {
         />
 
         <div className="flex w-full min-w-0 max-w-191.5 flex-col gap-4 lg:gap-6">
-          <h2 className="lg:text-[40px] sm:text-[32px] text-[20px] lg:leading-16 leading-12 font-bold">
+          <h2 className="lg:text-[40px] sm:text-[32px] text-[20px] lg:leading-16 leading-12 font-bold font-mecomisce">
             {"ჩვენ შესახებ".toUpperCase()}
           </h2>
 
