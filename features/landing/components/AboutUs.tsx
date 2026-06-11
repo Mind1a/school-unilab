@@ -7,9 +7,9 @@ const AboutUs = () => {
   const [enableClamp, setEnableClamp] = useState(true);
 
   return (
-    <section className="flex justify-center lg:p-[80px_50px_144px] md:p-[72px_75px] p-[72px_16px_56px]">
+    <section className="flex w-full min-w-0 justify-center overflow-x-clip p-[72px_16px_56px] md:p-[72px_75px] lg:p-[80px_50px_144px]">
       <div
-        className={`lg:w-275 w-171 lg:min-h-112 md:min-h-[359.99px] min-h-72 border-4 bg-[#7196D8] relative z-10 flex justify-center items-center sm:p-[32px_80px] p-6 lg:p-[56px_0px] transition-all duration-500 ease-in-out`}
+        className={`relative z-10 flex min-h-72 w-full max-w-171 min-w-0 items-center justify-center border-4 bg-[#7196D8] p-6 transition-all duration-500 ease-in-out md:min-h-[359.99px] sm:p-[32px_80px] lg:min-h-112 lg:max-w-275 lg:p-[56px_0px]`}
       >
         <Image
           src={"/images/landingImages/aboutUsCorner.svg"}
@@ -43,7 +43,7 @@ const AboutUs = () => {
           className="absolute right-33 lg:top-7 top-0 left-[-49.73px] hidden sm:block lg:w-[262.70px] w-[150.95px]"
         />
 
-        <div className="flex flex-col lg:gap-6 gap-4 max-w-191.5 w-full">
+        <div className="flex w-full min-w-0 max-w-191.5 flex-col gap-4 lg:gap-6">
           <h2 className="lg:text-[40px] sm:text-[32px] text-[20px] lg:leading-16 leading-12 font-bold">
             {"ჩვენ შესახებ".toUpperCase()}
           </h2>
@@ -91,7 +91,7 @@ const AboutUs = () => {
             }}
             aria-expanded={isOpen}
             aria-controls="about-us-text"
-            className="hover:bg-[#B8CBEB] duration-300 ease-in-out border-2 flex gap-2 bg-[#94B0E2] rounded-[64px] sm:p-[16px_24px] p-[12px_24px] cursor-pointer shadow-[-8px_8px_4px_0_rgba(0,0,0,0.1),-2px_2px_0px_0px_black] lg:w-54 md:w-131 w-77.5 justify-center lg:text-[24px] text-[20px] leading-6 self-center md:self-auto items-center"
+            className="flex w-full max-w-77.5 cursor-pointer items-center justify-center gap-2 self-center rounded-[64px] border-2 bg-[#94B0E2] p-[12px_24px] text-[20px] leading-6 shadow-[-8px_8px_4px_0_rgba(0,0,0,0.1),-2px_2px_0px_0px_black] duration-300 ease-in-out hover:bg-[#B8CBEB] md:max-w-131 md:self-auto sm:p-[16px_24px] lg:max-w-54 lg:text-[24px]"
           >
             {isOpen ? "აკეცვა" : "გაიგე მეტი"}
             <div
