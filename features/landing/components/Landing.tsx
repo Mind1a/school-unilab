@@ -1,3 +1,4 @@
+import AboutUs from "./AboutUs";
 import DiscoverProjects from "./DiscoverProjects";
 import Statistic from "./Statistic";
 
@@ -6,6 +7,7 @@ const Landing = () => {
     <div>
       <DiscoverProjects />
       <Statistic />
+      <AboutUs />
     </div>
   );
 };
