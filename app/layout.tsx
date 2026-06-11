@@ -1,18 +1,31 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/features/query/QueryProvider";
-// import { ResponsiveContainer } from "@/components/ResponsiveContainer";
+import localFont from "next/font/local";
 import { Toaster } from "react-hot-toast";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const noto = localFont({
+  variable: "--font-noto",
+  display: "swap",
+  src: [
+    {
+      path: "../public/font/NotoSansGeorgian-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const mecomisce = localFont({
+  variable: "--font-mecomisce",
+  display: "swap",
+  src: [
+    {
+      path: "../public/font/TFMecomicse-Regular-59522229166.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -26,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ka" className={`${noto.variable} ${mecomisce.variable}`}>
+      <body>
         <QueryProvider>
           {children}
           <Toaster
