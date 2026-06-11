@@ -3,121 +3,75 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="max-h-161 h-full w-full overflow-hidden bg-[url('/images/heroSection/pngs/HeroBG.png')] flex items-center">
-      <div className="relative flex mx-auto">
-        <div className="absolute top-6 right-8 w-12 h-12 opacity-90 rotate-[-10deg]">
-          <Image
-            src={"/images/heroSection/svgs/GameConsole.svg"}
-            alt="ყურსასმენების სურათი"
-            width={144}
-            height={137}
-          />
-        </div>
-        <div className="absolute top-1/2 right-6 -translate-y-1/2 w-11 h-11 opacity-90 rotate-[8deg]">
-          <Image
-            src={"/images/heroSection/svgs/Smiley.svg"}
-            alt="ყურსასმენების სურათი"
-            width={144}
-            height={137}
-          />
-        </div>
-        <div className="absolute bottom-6 right-10 w-12 h-12 opacity-90 rotate-[-6deg]">
-          <Image
-            src={"/images/heroSection/svgs/Headphones.svg"}
-            alt="ყურსასმენების სურათი"
-            width={144}
-            height={137}
-          />
-        </div>
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
-          {/* Left: Image with dashed connector */}
-          <div className="relative flex-shrink-0 w-full max-w-[380px]">
-            <div className="rounded-2xl overflow-hidden">
-              <Image
-                src="/images/heroSection/pngs/Banner.png" // Replace with your actual image path
-                alt="Visual Programming Workshop"
-                width={420}
-                height={280}
-                className="object-contain w-full"
-                priority
-              />
-            </div>
+    <section className="max-w-97.5 max-h-[485.39px] md:max-w-208.25 md:max-h-[350.74px] lg:max-h-161 lg:max-w-360 mx-auto h-full w-full overflow-hidden bg-[url('/images/heroSection/pngs/HeroBG.png')] flex items-center lg:relative border-2 border-[#E5E5E5] md:rounded-lg lg:rounded-2xl rounded-none">
+      {/* //! Decorative Images */}
 
-            {/* Dashed horizontal connector line pointing right */}
-            <div className="hidden md:block absolute top-1/2 -right-[68px] -translate-y-1/2 w-16">
-              <svg
-                width="64"
-                height="20"
-                viewBox="0 0 64 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <line
-                  x1="0"
-                  y1="10"
-                  x2="56"
-                  y2="10"
-                  stroke="#3B8BF5"
-                  strokeWidth="1.5"
-                  strokeDasharray="6 4"
-                />
-                {/* Arrow tip */}
-                <polyline
-                  points="50,4 60,10 50,16"
-                  fill="none"
-                  stroke="#3B8BF5"
-                  strokeWidth="1.5"
-                  strokeLinejoin="round"
-                />
-                {/* Dot at start */}
-                <circle cx="2" cy="10" r="3" fill="#3B8BF5" />
-              </svg>
-            </div>
-          </div>
+      <div className="lg:block hidden absolute top-2 right-30 max-w-37 max-h-37 h-full w-full">
+        <Image
+          src={"/images/heroSection/svgs/GameConsole.svg"}
+          alt="კონსოლის სურათი"
+          width={132}
+          height={105}
+        />
+      </div>
+      <div className="lg:block hidden absolute right-30.5 top-97 max-w-[121.79px] max-h-30.5 h-full w-full">
+        <Image
+          src={"/images/heroSection/svgs/Smiley.svg"}
+          alt="ღიმილის სურათი"
+          width={106}
+          height={106}
+        />
+      </div>
+      <div className="lg:block hidden absolute top-126 right-30.5 w-full h-full max-w-40 max-h-40">
+        <Image
+          src={"/images/heroSection/svgs/Headphones.svg"}
+          alt="ყურსასმენების სურათი"
+          width={144}
+          height={137}
+        />
+      </div>
 
-          {/* Right: Text content */}
-          <div className="flex flex-col gap-5 text-white max-w-[380px]">
-            {/* Title */}
-            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
-              ვიზუალური
-              <br />
-              პროგრამირების
-              <br />
-              ვორქშოფი
+      <div className="flex flex-col gap-2 md:gap-12 md:flex-row mx-auto w-full max-w-89.5 max-h-[437.39px] md:max-w-196.25 md:max-h-[286.74px] lg:max-h-126 lg:max-w-300 items-center">
+        {/*//! Left: Image */}
+        <div className="rounded-2xl overflow-hidden max-w-89.5 md:max-w-96 lg:max-w-169 w-full">
+          <Image
+            src="/images/heroSection/pngs/Banner.png" // Replace with your actual image path
+            alt="Visual Programming Workshop"
+            width={420}
+            height={280}
+            className="object-contain w-full"
+            priority
+          />
+        </div>
+
+        {/* //!Right: Text content */}
+        <div className="flex flex-col lg:max-w-119 lg:max-h-102.5 md:max-w-88.25 md:max-h-53.5 max-w-89.5 max-h-40.5 h-full w-full md:gap-12 gap-4">
+          <div className="w-full h-full max-h-24 md:max-h-31 lg:max-h-76 flex flex-col md:gap-4 gap-2">
+            <h1 className="font-mecomisce text-2xl leading-6 lg:text-5xl lg:leading-14">
+              {"ვიზუალური პროგრამირების ვორქშოფი".toUpperCase()}
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-sm md:text-base text-[#A0B4D0] leading-relaxed">
-              თუ ხარ 14 და 14-კლასის მოსწავლე,
-              <br />
-              უნიკალი სასხალისო ვორქშოფის
-              <br />
+            <p className="font-noto text-base leading-5 lg:text-2xl lg:leading-10 text-[#666666] max-w-sm lg:max-w-md">
+              თუ ხარ IV, V ან VI კლასის მოსწავლე, უნილაბი სახალისო ვორკშოპს{" "}
+              <br className="hidden md:block lg:hidden" />
               გთავაზობს.
             </p>
-
-            {/* CTA Button */}
-            <Link
-              href="#"
-              className="inline-flex items-center gap-2 self-start bg-[#E8402A] hover:bg-[#D03520] active:bg-[#B82C18] text-white text-sm font-bold px-6 py-3 rounded-full transition-colors duration-200 shadow-[0_0_20px_rgba(232,64,42,0.4)] hover:shadow-[0_0_28px_rgba(232,64,42,0.6)]"
-            >
-              გაეცანი პროექტს
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3 8h10M9 4l4 4-4 4"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
           </div>
+
+          {/* //!Button */}
+          <Link href="/project">
+            <button className="items-center gap-2 `px-6 py-4  bg-[#F87060] border-2 border-black rounded-[64px] shadow-[-4px_8px_2px_0px_rgba(0,0,0,0.15),-4px_4px_0px_0px_#000] transition-all duration-100 hover:-translate-x-0.5 hover:translate-y-0.5 hover:shadow-[-2px_6px_2px_0px_rgba(0,0,0,0.15),-2px_2px_0px_0px_#000] active:-translate-x-1 active:translate-y-1.5 active:shadow-none cursor-pointer lg:max-w-73.75 lg:max-h-14.5 md:max-w-88.25 md:max-h-10.5 max-w-89.5 max-h-12.5 h-full w-full flex justify-center">
+              <span className="font-mecomisce text-xl leading-6 lg:text-2xl">
+                {"გაეცანი პროექტს".toUpperCase()}
+              </span>
+              <Image
+                src="/images/heroSection/svgs/Arrow.svg"
+                alt="ისარი ლოგო"
+                width={24}
+                height={24}
+              />
+            </button>
+          </Link>
         </div>
       </div>
     </section>
