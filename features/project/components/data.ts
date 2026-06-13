@@ -7,9 +7,8 @@ export type ProjectData = {
   href: string;
 };
 
-export const projectsData: ProjectData[] = [
+const baseProjects = [
   {
-    id: 1,
     image: "/images/discover-projects/photo-1.png",
     title: "ვიზუალური პროგრამირების ვორკშოპი",
     date: "12 ივნ 2026",
@@ -17,7 +16,6 @@ export const projectsData: ProjectData[] = [
     href: "#",
   },
   {
-    id: 2,
     image: "/images/discover-projects/photo-2.jpg",
     title: "პროექტის მოკლე აღწერა",
     date: "15 ივნ 2026",
@@ -25,7 +23,6 @@ export const projectsData: ProjectData[] = [
     href: "#",
   },
   {
-    id: 3,
     image: "/images/discover-projects/photo-3.jpg",
     title: "პროექტის მოკლე აღწერა პროექტის მოკლე აღწერა",
     date: "18 ივნ 2026",
@@ -33,3 +30,15 @@ export const projectsData: ProjectData[] = [
     href: "#",
   },
 ];
+
+export const projectsData: ProjectData[] = Array.from(
+  { length: 180 },
+  (_, index) => {
+    const project = baseProjects[index % baseProjects.length];
+
+    return {
+      id: index + 1,
+      ...project,
+    };
+  },
+);

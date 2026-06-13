@@ -32,7 +32,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider>
       <div className="flex flex-col min-h-screen">
         <main className="flex-1">{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </NextIntlClientProvider>
   );
