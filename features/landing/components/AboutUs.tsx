@@ -44,22 +44,20 @@ const AboutUs = () => {
         />
 
         <div className="flex w-full min-w-0 max-w-191.5 flex-col gap-4 lg:gap-6">
-          <h2 className="lg:text-[40px] sm:text-[32px] text-[20px] lg:leading-16 leading-12 font-bold">
+          <h2 className="lg:text-[40px] sm:text-[32px] text-[20px] lg:leading-16 leading-12 font-bold font-mecomisce">
             {"ჩვენ შესახებ".toUpperCase()}
           </h2>
 
           <div
             id="about-us-text"
-            className={`overflow-hidden transition-all duration-500 ease-in-out ${
-              isOpen ? "max-h-250" : "max-h-37.5 md:max-h-45 lg:max-h-45"
-            }`}
+            className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-250" : "max-h-37.5 md:max-h-45 lg:max-h-45"
+              }`}
           >
             <p
-              className={`lg:text-[20px] text-[16px] lg:leading-6 leading-5 ${
-                !isOpen && enableClamp
-                  ? "line-clamp-6 md:line-clamp-7 lg:line-clamp-6"
-                  : ""
-              }`}
+              className={`lg:text-[20px] text-[16px] lg:leading-6 leading-5 ${!isOpen && enableClamp
+                ? "line-clamp-6 md:line-clamp-7 lg:line-clamp-6"
+                : ""
+                }`}
             >
               ოდესმე გიფიქრია პატარა ოთახზე, რომელში შესვლისას დროსა და სივრცეში
               იკარგები და საშუალება გეძლევა მომავლის გარკვეული ნაწილი დაინახო?
@@ -91,9 +89,8 @@ const AboutUs = () => {
             }}
             aria-expanded={isOpen}
             aria-controls="about-us-text"
-            className="flex w-full max-w-77.5 cursor-pointer items-center justify-center gap-2 self-center rounded-[64px] border-2 bg-[#94B0E2] p-[12px_24px] text-[20px] leading-6 shadow-[-8px_8px_4px_0_rgba(0,0,0,0.1),-2px_2px_0px_0px_black] duration-300 ease-in-out hover:bg-[#B8CBEB] md:max-w-131 md:self-auto sm:p-[16px_24px] lg:max-w-54 lg:text-[24px]"
-          >
-            {isOpen ? "აკეცვა" : "გაიგე მეტი"}
+            className="flex w-full max-w-77.5 cursor-pointer items-center justify-center gap-2 self-center rounded-[64px] border-2 bg-[#94B0E2] p-[12px_24px] text-[20px] leading-6 shadow-[-8px_8px_4px_0_rgba(0,0,0,0.1),-2px_2px_0px_0px_black] duration-300 ease-in-out hover:bg-[#B8CBEB] md:max-w-131 md:self-auto sm:p-[16px_24px] lg:max-w-54 lg:text-[24px] font-mecomisce">
+            {isOpen ? "აკეცვა".toUpperCase() : "გაიგე მეტი".toUpperCase()}
             <div
               className={`transition-transform duration-300 flex items-center ${isOpen ? "rotate-180" : ""}`}
             >
