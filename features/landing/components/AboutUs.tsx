@@ -9,22 +9,22 @@ const AboutUs = () => {
   return (
     <section className="flex w-full min-w-0 justify-center overflow-x-clip p-[72px_16px_56px] md:p-[72px_75px] lg:p-[80px_50px_144px]">
       <div
-        className={`relative z-10 flex min-h-72 w-full max-w-171 min-w-0 items-center justify-center border-4 bg-[#7196D8] p-6 transition-all duration-500 ease-in-out md:min-h-[359.99px] sm:p-[32px_80px] lg:min-h-112 lg:max-w-275 lg:p-[56px_0px]`}
+        className={`relative z-10 flex min-h-72 w-full max-w-171 min-w-0 items-center justify-center border-4 bg-[#7196D8] p-6 transition-all duration-500 ease-in-out md:min-h-[359.99px] sm:p-[32px_80px] lg:min-h-112 lg:max-w-275 lg:p-[56px_0px] shadow-[-8px_-8px_4px_0_rgba(0,0,0,0.1)]`}
       >
         <Image
           src={"/images/landingImages/aboutUsCorner.svg"}
           alt="about us corner"
-          width={114.67}
+          width={170}
           height={60.5}
-          className="absolute -right-1.75 -top-1.5 hidden lg:block"
+          className="absolute -right-6.25 -top-6 hidden lg:block"
         />
 
         <Image
           src={"/images/landingImages/aboutUsCornerSm.svg"}
           alt="about us corner"
-          width={38.98}
+          width={90}
           height={30.76}
-          className="absolute -right-2.25 -top-1.5 lg:hidden"
+          className="absolute -right-4.75 top-[-25.5px] lg:hidden"
         />
 
         <Image
@@ -32,7 +32,7 @@ const AboutUs = () => {
           alt="papper clips"
           width={195.18}
           height={160}
-          className="absolute lg:right-33 lg:-top-17 lg:w-[195.18px] md:w-30 w-[97.59px] md:-top-10.75 -top-8.75 right-10"
+          className="absolute lg:right-33 lg:-top-17 lg:w-[195.18px] md:w-30 w-[97.59px] md:-top-10.75 -top-8.75 right-15"
         />
 
         <Image
