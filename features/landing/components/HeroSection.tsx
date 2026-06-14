@@ -60,8 +60,8 @@ export default function HeroSection() {
 
           {/* //!Button */}
           <Link href="/project">
-            <button className="items-center gap-2 lg:pl-6 lg:py-4 md:pl-17.75 md:py-2 pl-[73.5px] py-3  bg-[#F87060] border-2 border-black rounded-[64px] shadow-[-4px_8px_2px_0px_rgba(0,0,0,0.15),-4px_4px_0px_0px_#000] transition-all duration-100 hover:-translate-x-0.5 hover:translate-y-0.5 hover:shadow-[-2px_6px_2px_0px_rgba(0,0,0,0.15),-2px_2px_0px_0px_#000] active:-translate-x-1 active:translate-y-1.5 active:shadow-none cursor-pointer lg:max-w-73.75 md:max-w-88.25 max-w-89.5 h-full w-full flex ">
-              <span className="font-mecomisce text-xl leading-6 lg:text-2xl">
+            <button className="items-center gap-2 lg:pl-6 lg:py-4 md:pl-17.75 md:py-2 pl-[73.5px] py-3  bg-[#F87060] border-2 border-black rounded-[64px] shadow-[-4px_8px_2px_0px_rgba(0,0,0,0.15),-4px_4px_0px_0px_#000] transition-all duration-100 hover:-translate-x-0.5 hover:translate-y-0.5 hover:shadow-[-2px_6px_2px_0px_rgba(0,0,0,0.15),-2px_2px_0px_0px_#000] active:-translate-x-1 active:translate-y-1.5 active:shadow-none cursor-pointer lg:max-w-73.75 md:max-w-88.25 max-w-89.5 h-full w-full flex hover:bg-[#7196D8] ">
+              <span className="font-mecomisce text-xl leading-6 lg:text-2xl pt-1">
                 {"გაეცანი პროექტს".toUpperCase()}
               </span>
               <Image
