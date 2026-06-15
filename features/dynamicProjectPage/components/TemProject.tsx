@@ -8,6 +8,8 @@ import duration from "../../../public/images/TemProject/icons/duration-icon.png"
 import location from "../../../public/images/TemProject/icons/location-icon.png";
 import arrow from "../../../public/images/TemProject/icons/arrow-icon.png";
 
+import ArrowRight from "../../../public/images/TemProject/arrow-right.svg";
+
 const TemProject = () => {
   return (
     <section className="mx-[14px] mt-2 mb-[198px] md:mx-[24px] md:mt-0 md:mb-[64px] lg:mx-[120px] lg:mt-[31.5px] lg:mb-[120px] flex justify-center items-center">
@@ -17,9 +19,13 @@ const TemProject = () => {
           <nav aria-label="breadcrumb" className="hidden md:block mb-4 ">
             <ol className="flex items-center gap-2 text-sm font-light font-sans mb-4 p-2">
               <li>პროექტები</li>
-              <li>&gt;</li>
+              <li>
+                <ArrowRight width={6} height={11} />
+              </li>
               <li>ვორკშოპები</li>
-              <li>&gt;</li>
+              <li>
+                <ArrowRight width={6} height={11} />
+              </li>
               <li>ვიზუალური პროგრამირების ვორკშოპი</li>
             </ol>
           </nav>
@@ -51,9 +57,9 @@ const TemProject = () => {
         </div>
 
         {/* Title */}
-        <h1 className="mt-8 mb-[20px] md:mb-[32px] lg:mb-[48px] text-2xl md:text-[32px] lg:text-[64px] leading-tight font-bold font-mecomisce">
-          ვიზუალური პროგრამირების ვორქშოპი
-        </h1>
+        <h2 className="mt-8 mb-[20px] md:mb-[32px] lg:mb-[48px] text-2xl md:text-[32px] lg:text-[64px] leading-tight font-bold font-mecomisce">
+          {"ვიზუალური პროგრამირების ვორქშოპი".toUpperCase()}
+        </h2>
 
         {/* Project Description */}
         <div>
@@ -132,10 +138,10 @@ const TemProject = () => {
           </div>
         </div>
         <button
-          className="flex items-center gap-2 bg-[#F87060] px-3 py-3.5 rounded-full text-xl md:text-2xl border-2 border-black
-         shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] font-mecomisce mt-[20px] md:mt-[32px] lg:mt-[48px]"
+          className="flex items-center justify-center gap-2 bg-[#F87060] px-3 py-3.5 rounded-full text-xl md:text-2xl border-2 border-black
+         shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] font-mecomisce mt-[20px] md:mt-[32px] lg:mt-[48px] cursor-pointer w-full md:w-auto "
         >
-          <span>დარეგისტრირდი ახლავე</span>
+          <span>{"დარეგისტრირდი ახლავე".toUpperCase()}</span>
           <div className="w-6 h-6 flex items-center justify-center shrink-0">
             <Image width={24} height={24} src={arrow} alt="arrow" />
           </div>
