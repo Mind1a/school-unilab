@@ -7,6 +7,17 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     useEffect(() => {
+        const media = window.matchMedia("(min-width: 768px)");
+        const handleChange = (e: MediaQueryListEvent) => {
+            if (e.matches) {
+                setIsMenuOpen(false);
+            }
+        };
+        media.addEventListener("change", handleChange);
+        return () => media.removeEventListener("change", handleChange);
+    }, []);
+
+    useEffect(() => {
         if (isMenuOpen) {
             document.body.style.overflow = "hidden";
         } else {
