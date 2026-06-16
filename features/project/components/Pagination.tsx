@@ -166,7 +166,7 @@ export default Pagination;
 const Card = ({ project }: { project: ProjectData }) => {
   return (
     <li className="h-72 w-full md:h-65 lg:h-90">
-      <article className="flex h-full w-full flex-col items-center overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)]">
+      <article className="flex h-full w-full flex-col items-center overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)]">
         <div className="relative h-40 w-full overflow-hidden md:h-35 lg:h-50">
           <Image
             src={project.image}
@@ -197,16 +197,27 @@ const Card = ({ project }: { project: ProjectData }) => {
           <div className="mt-4 flex h-6 w-full items-center justify-between bg-white lg:mt-6">
             <Link
               href={project.href}
-              className="flex items-center text-[14px] text-[rgba(77,124,206,1)]"
+              className="group flex items-center text-[14px] text-[rgba(77,124,206,1)]"
             >
               <Image
                 src="/images/discover-projects/view-more.svg"
                 alt=""
                 width={20}
                 height={20}
+                className="block group-hover:hidden"
               />
 
-              <span className="ml-2">დეტალურად</span>
+              <Image
+                src="/images/discover-projects/view-more-hover.svg"
+                alt=""
+                width={20}
+                height={20}
+                className="hidden group-hover:block"
+              />
+
+              <span className="ml-2 group-hover:text-[rgba(148,176,226,1)]">
+                დეტალურად
+              </span>
             </Link>
 
             <time
