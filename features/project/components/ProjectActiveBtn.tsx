@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { projectFilters } from "./filters";
 
 type ProjectActiveBtnProps = {
@@ -9,15 +10,42 @@ type ProjectActiveBtnProps = {
 };
 
 const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [hoveredFilter, setHoveredFilter] = useState<string | null>(null);
 
+  useEffect(() => {
+    const categoriesFromUrl = searchParams.getAll("category");
+
+    setSelectedFilters(categoriesFromUrl);
+  }, [searchParams]);
+
   const toggleFilter = (value: string) => {
-    setSelectedFilters((prev) =>
-      prev.includes(value)
-        ? prev.filter((item) => item !== value)
-        : [...prev, value],
-    );
+    const params = new URLSearchParams(searchParams.toString());
+
+    const currentCategories = params.getAll("category");
+    const isAlreadySelected = currentCategories.includes(value);
+
+    params.delete("category");
+
+    const nextCategories = isAlreadySelected
+      ? currentCategories.filter((item) => item !== value)
+      : [...currentCategories, value];
+
+    nextCategories.forEach((category) => {
+      params.append("category", category);
+    });
+
+    const queryString = params.toString();
+
+    router.push(queryString ? `${pathname}?${queryString}` : pathname, {
+      scroll: false,
+    });
+
+    setSelectedFilters(nextCategories);
   };
 
   return (
@@ -44,9 +72,9 @@ const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
 
         <Image
           src="/images/project/line.svg"
-          alt="line"
+          alt=""
           width={358}
-          height={0}
+          height={1}
           className="mt-4"
         />
 
@@ -122,7 +150,7 @@ const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
       </div>
 
       {/* Tablet/Desktop Filter Panel */}
-      <div className="hidden rounded-2xl border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] md:mt-3 md:flex md:h-38 md:w-196.5 md:flex-wrap md:content-center md:items-center md:gap-x-8 md:gap-y-4 md:px-6 lg:mt-4 lg:h-22 lg:w-300 lg:flex-nowrap lg:justify-between lg:gap-10 lg:px-10">
+      <div className="hidden rounded-2xl border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] md:mt-3 md:flex md:h-38 md:w-full md:max-w-196.5 md:flex-wrap md:content-center md:items-center md:gap-x-8 md:gap-y-4 md:px-6 xl:mt-4 xl:h-22 xl:max-w-300 xl:flex-nowrap xl:justify-between xl:gap-10 xl:px-10">
         {projectFilters.map((filter) => {
           const isSelected = selectedFilters.includes(filter.value);
           const isHovered = hoveredFilter === filter.value;
