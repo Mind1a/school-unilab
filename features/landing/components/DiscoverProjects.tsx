@@ -55,17 +55,27 @@ const DiscoverProjects = () => {
 
         <div className="mt-6 flex w-full items-center justify-center lg:mt-10">
           <Link
-            href="#"
-            className="font-mecomisce flex items-center text-[16px] text-black md:text-[20px] lg:text-[24px]"
+            href="/project"
+            className="group font-mecomisce flex items-center text-[16px] text-black md:text-[20px] lg:text-[24px]"
           >
-            <span>{"ყველა პროექტის ნახვა".toUpperCase()}</span>
+            <span className="group-hover:text-[rgba(77,124,206,1)]">
+              {"ყველა პროექტის ნახვა".toUpperCase()}
+            </span>
 
             <Image
               src="/images/discover-projects/arrow.svg"
-              alt=""
+              alt="arrow"
               width={24}
               height={24}
-              className="ml-4"
+              className="ml-4 block group-hover:hidden"
+            />
+
+            <Image
+              src="/images/discover-projects/arrow-hover.svg"
+              alt="arrow-hovered"
+              width={24}
+              height={24}
+              className="ml-4 hidden group-hover:block"
             />
           </Link>
         </div>
@@ -77,7 +87,7 @@ const DiscoverProjects = () => {
 const Card = ({ project }: { project: Project }) => {
   return (
     <li className="h-72 w-70.25 shrink-0 first:ml-1 last:mr-1 md:h-65 md:w-60.75 lg:h-90 lg:w-full lg:first:ml-0 lg:last:mr-0">
-      <article className="flex flex-col items-center w-full h-full rounded-2xl overflow-hidden bg-white border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)]">
+      <article className="flex flex-col items-center w-full h-full rounded-2xl overflow-hidden bg-white border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)]">
         <div className="relative w-full h-40 md:h-35 lg:h-50 overflow-hidden">
           <Image
             src={project.image}
@@ -108,16 +118,27 @@ const Card = ({ project }: { project: Project }) => {
           <div className="flex justify-between items-center w-full h-6 mt-4 lg:mt-6 bg-white">
             <Link
               href={project.href}
-              className="flex items-center text-[14px] text-[rgba(77,124,206,1)]"
+              className="group flex items-center text-[14px] text-[rgba(77,124,206,1)]"
             >
               <Image
                 src="/images/discover-projects/view-more.svg"
                 alt=""
                 width={20}
                 height={20}
+                className="block group-hover:hidden"
               />
 
-              <span className="ml-2">დეტალურად</span>
+              <Image
+                src="/images/discover-projects/view-more-hover.svg"
+                alt=""
+                width={20}
+                height={20}
+                className="hidden group-hover:block"
+              />
+
+              <span className="ml-2 group-hover:text-[rgba(148,176,226,1)]">
+                დეტალურად
+              </span>
             </Link>
 
             <time
