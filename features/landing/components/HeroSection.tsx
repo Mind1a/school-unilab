@@ -3,10 +3,11 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="max-w-97.5 max-h-[485.39px] md:max-w-208.25 md:max-h-[350.74px] lg:max-h-161 lg:max-w-360 mx-auto h-full w-full overflow-hidden bg-[url('/images/heroSection/pngs/HeroBG.png')] flex items-center lg:relative border-2 border-[#E5E5E5] md:rounded-lg lg:rounded-2xl rounded-none">
+    <section className="relative max-h-[485.39px] md:max-h-[350.74px] lg:max-h-161 lg:max-w-360 mx-auto h-full w-full overflow-hidden flex items-center border-2 border-[#E5E5E5] md:rounded-lg lg:rounded-2xl rounded-none">
+      <div className="absolute inset-0 bg-[url('/images/heroSection/pngs/HeroBG.png')] bg-cover bg-center opacity-20 z-0" />
       {/* //! Decorative Images */}
 
-      <div className="lg:block hidden absolute top-2 right-30 max-w-37 max-h-37 h-full w-full">
+      <div className="lg:block hidden absolute top-2 right-30 max-w-37 max-h-37 h-full w-full z-10">
         <Image
           src={"/images/heroSection/svgs/GameConsole.svg"}
           alt="კონსოლის სურათი"
@@ -14,7 +15,7 @@ export default function HeroSection() {
           height={105}
         />
       </div>
-      <div className="lg:block hidden absolute right-30.5 top-97 max-w-[121.79px] max-h-30.5 h-full w-full">
+      <div className="lg:block hidden absolute right-30.5 top-97 max-w-[121.79px] max-h-30.5 h-full w-full z-10">
         <Image
           src={"/images/heroSection/svgs/Smiley.svg"}
           alt="ღიმილის სურათი"
@@ -22,7 +23,7 @@ export default function HeroSection() {
           height={106}
         />
       </div>
-      <div className="lg:block hidden absolute top-126 right-30.5 w-full h-full max-w-40 max-h-40">
+      <div className="lg:block hidden absolute top-126 right-30.5 w-full h-full max-w-40 max-h-40 z-10">
         <Image
           src={"/images/heroSection/svgs/Headphones.svg"}
           alt="ყურსასმენების სურათი"
@@ -31,7 +32,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="flex flex-col gap-2 md:gap-12 md:flex-row mx-auto w-full max-w-89.5 max-h-[437.39px] md:max-w-196.25 md:max-h-[286.74px] lg:max-h-126 lg:max-w-300 items-center">
+      <div className="relative z-10 flex flex-col gap-2 md:gap-12 md:flex-row mx-auto w-full max-w-89.5 max-h-[437.39px] md:max-w-196.25 md:max-h-[286.74px] lg:max-h-126 lg:max-w-300 items-center">
         {/*//! Left: Image */}
         <div className="rounded-2xl overflow-hidden max-w-89.5 md:max-w-96 lg:max-w-169 w-full">
           <Image
