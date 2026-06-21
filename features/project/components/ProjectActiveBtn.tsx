@@ -150,7 +150,7 @@ const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
       </div>
 
       {/* Tablet/Desktop Filter Panel */}
-      <div className="hidden rounded-2xl border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] md:mt-3 md:flex md:h-38 md:w-full md:max-w-196.5 md:flex-wrap md:content-center md:items-center md:gap-x-8 md:gap-y-4 md:px-6 xl:mt-4 xl:h-22 xl:max-w-300 xl:flex-nowrap xl:justify-between xl:gap-10 xl:px-10">
+      <div className="hidden rounded-2xl border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] md:mt-3 md:flex md:h-38 md:w-full md:flex-wrap md:content-center md:items-center md:gap-x-8 md:gap-y-4 md:px-6 xl:mt-4 xl:h-22 xl:max-w-300 xl:flex-nowrap xl:justify-between xl:gap-10 xl:px-10 md:max-w-196.25 lg:max-w-300">
         {projectFilters.map((filter) => {
           const isSelected = selectedFilters.includes(filter.value);
           const isHovered = hoveredFilter === filter.value;
