@@ -33,7 +33,7 @@ const logos: Logo[] = [
     height: 160,
   },
   {
-    src: "/images/logo1.svg",
+    src: "/images/unilogo.svg",
     alt: "Iliauni",
     href: "#",
     label: "ლოგო",
@@ -41,7 +41,7 @@ const logos: Logo[] = [
     height: 160,
   },
   {
-    src: "/images/Group.svg",
+    src: "/images/unilab.svg",
     alt: "Group",
     href: "#",
     label: "უნილაბი",
