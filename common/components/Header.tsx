@@ -156,11 +156,11 @@ const Header = () => {
         {
           searchQuery && (
             <div className="w-full bg-white   ">
-              <div className="max-w-304.5 w-full overflow-y-auto h-100 flex flex-col gap-8 mx-auto">
+              <div className="max-w-304.5 w-full overflow-y-auto h-200 flex flex-col gap-8 mx-auto">
                 {
                   searchQuery && (
-                    <div className="w-full bg-white py-8  px-4 md:py-16 md:px-18.75">
-                      <div className="max-w-304.5 w-full   flex flex-col  mx-auto">
+                    <div className="w-full bg-white py-8 max-h-screen px-4 md:py-16 md:px-18.75 lg:h-100 overflow-y-auto">
+                      <div className="max-w-304.5 w-full flex flex-col  mx-auto">
                         {filteredData.length === 0 ? (
                           <div className="flex flex-col items-center gap-15 text-gray-500 ">
                             <h2 className="text-[#F87060] lg:text-[48px] text-[24px] leading-6 text-center flex-col flex lg:leading-14 font-mecomisce">
@@ -197,7 +197,7 @@ const Header = () => {
 
                                   return (
                                     <li key={item.id} className="list-none">
-                                      <Link href={item.href} className="flex items-center gap-4">
+                                      <Link href={`/TempProject/${item.id}`} className="flex items-center gap-4 leading-5">
                                         <Image width={48} height={48} src={item.icon} className="w-6 h-6 md:w-12 md:h-12" alt="Link Icon" />
                                         <p className="leading-5 md:leading-6 md:text-[24px] lg:text-[32px] lg:leading-12 text-black">
                                           {renderHighlightedText(item.text)}
@@ -237,7 +237,7 @@ const Header = () => {
             <li className="p-4 xl:py-4 xl:px-6">
               <Link
                 className="hover:text-[#4D7CCE] duration-200 ease-in-out text-[20px] lg:text-[24px] text-nowrap lg:leading-6"
-                href="#"
+                href="/ka"
               >
                 {"მთავარი".toUpperCase()}
               </Link>
@@ -253,7 +253,7 @@ const Header = () => {
             <li className="p-4 xl:py-4 xl:px-6">
               <Link
                 className="hover:text-[#4D7CCE] duration-200 ease-in-out text-[20px] lg:text-[24px] text-nowrap lg:leading-6"
-                href="#"
+                href="/ka/project"
               >
                 {"პროექტები".toUpperCase()}
               </Link>

@@ -113,10 +113,10 @@ const ProjectDetailItem = ({ detail }: ProjectDetailItemProps) => {
     </div>
   );
 };
-
+// TemProject
 const TemProject = () => {
   return (
-    <section className="mx-[14px] mt-2 mb-[198px] md:mx-[24px] md:mt-0 md:mb-[64px] lg:mx-[120px] lg:mt-[31.5px] lg:mb-[120px] flex justify-center items-center">
+    <section className="mx-[14px] xl:mt-37 md:mt-30 mt-25 mt-2 mb-[198px] md:mx-[24px] md:mt-0 md:mb-[64px] lg:mx-[120px] lg:mt-[31.5px] lg:mb-[120px] flex justify-center items-center">
       <article className="max-w-[1200px] w-full">
         <div>
           {/* Breadcrumbs */}

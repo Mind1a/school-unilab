@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section className=" xl:mt-37 md:mt-30 mt-25">
       <div className="  max-w-360 mx-auto py-6 border xl:py-20 border-[#EFEFEF]  w-full bg-[linear-gradient(#e5e7eb_1px,transparent_1px),linear-gradient(to_right,#e5e7eb_1px,transparent_1px)]
-    bg-size-[40px_40px] rounded-2xl">
+    bg-size-[64px_64px] rounded-2xl">
         <div className=" relative  flex flex-col max-w-300  md:px-6 px-4 xl:px-0 mx-auto w-full md:flex-row md:items-center sm:gap-4 gap-2 md:gap-12">
           <div className="hidden xl:block absolute inset-0 pointer-events-none z-0">
 
@@ -27,7 +27,7 @@ export default function HeroSection() {
               />
             </div>
 
-            <div className="absolute -bottom-12 right-16">
+            <div className="absolute -bottom-12 right-10">
               <Image
                 src="/images/heroSection/svgs/Headphones.svg"
                 alt="ყურსასმენების სურათი"
