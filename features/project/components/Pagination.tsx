@@ -186,25 +186,13 @@ const Card = ({ project }: { project: ProjectData }) => {
             </h3>
           </div>
 
-          <div className="mt-4 flex h-6 w-full items-center justify-between bg-white lg:mt-6">
+          <div className="mt-4  flex h-6 w-full items-center justify-between bg-white lg:mt-6">
             <Link
               href={project.href}
               className="group flex items-center text-[14px] lg:leading-6 text-[rgba(77,124,206,1)] shrink-0"
             >
-              <Image
-                src="/images/discover-projects/view-more.svg"
-                alt=""
-                width={20}
-                height={20}
-                className="block group-hover:hidden"
-              />
-              <Image
-                src="/images/discover-projects/view-more-hover.svg"
-                alt=""
-                width={20}
-                height={20}
-                className="hidden group-hover:block"
-              />
+              <Image src="/images/discover-projects/view-more.svg" alt="" width={20} height={20} className="block group-hover:hidden" />
+              <Image src="/images/discover-projects/view-more-hover.svg" alt="" width={20} height={20} className="hidden group-hover:block" />
               <span className="ml-2 group-hover:text-[rgba(148,176,226,1)] transition-colors whitespace-nowrap">
                 დეტალურად
               </span>

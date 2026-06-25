@@ -13,21 +13,21 @@ const baseProjects = [
     title: "ვიზუალური პროგრამირების ვორკშოპი",
     date: "12 ივნ 2026",
     dateTime: "2026-06-12",
-    href: "#",
+    href: "/TempProject",
   },
   {
     image: "/images/discover-projects/photo-2.jpg",
     title: "პროექტის მოკლე აღწერა",
     date: "15 ივნ 2026",
     dateTime: "2026-06-15",
-    href: "#",
+    href: "/TempProject",
   },
   {
     image: "/images/discover-projects/photo-3.jpg",
     title: "პროექტის მოკლე აღწერა პროექტის მოკლე აღწერა",
     date: "18 ივნ 2026",
     dateTime: "2026-06-18",
-    href: "#",
+    href: "/TempProject",
   },
 ];
 

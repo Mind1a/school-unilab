@@ -401,7 +401,7 @@ const Header = () => {
               height={144}
             />
             <li className="px-6 py-4">
-              <Link className="hover:text-[#4D7CCE] duration-200 " href="#">
+              <Link className="hover:text-[#4D7CCE] duration-200 " href="/ka" onClick={() => setIsMenuOpen(false)}>
                 {"მთავარი".toUpperCase()}
               </Link>
             </li>
@@ -413,7 +413,7 @@ const Header = () => {
               className="w-full "
             />
             <li className="px-6 py-4">
-              <Link className="hover:text-[#4D7CCE] duration-200 " href="#">
+              <Link className="hover:text-[#4D7CCE] duration-200 " href="/ka/#about-us" onClick={() => setIsMenuOpen(false)}>
                 {"ჩვენ შესახებ".toUpperCase()}
               </Link>
             </li>
@@ -425,7 +425,7 @@ const Header = () => {
               className="w-full "
             />
             <li className="px-6 py-4">
-              <Link className="hover:text-[#4D7CCE] duration-200 " href="#">
+              <Link className="hover:text-[#4D7CCE] duration-200 " href="/ka/project" onClick={() => setIsMenuOpen(false)}>
                 {"პროექტები".toUpperCase()}
               </Link>
             </li>
