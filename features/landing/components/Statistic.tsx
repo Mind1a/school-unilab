@@ -48,10 +48,10 @@ const StatisticChild = ({
   return (
     <article
       aria-label={fullLabel}
-      className="flex flex-col items-center md:max-w-[250px] lg:max-w-[384px] w-full text-center"
+      className="flex flex-col  font-mecomisce items-center md:max-w-62.5 xl:max-w-[384px] w-full text-center"
     >
       <div
-        className={`${imageClassName} h-[160px] md:h-[120px] lg:h-[200px] relative mb-4 lg:mb-14`}
+        className={`${imageClassName} h-40 md:h-30 lg:h-50 relative mb-4 lg:mb-14`}
       >
         <Image
           src={image}
@@ -61,11 +61,11 @@ const StatisticChild = ({
           sizes="(max-width: 767px) 193px, (max-width: 1023px) 145px, 242px"
         />
       </div>
-      <h2 className="text-[40px] lg:text-[64px] font-bold text-[#DB5353]">
-        {quantity}
-        {suffix}
-      </h2>
-      <p className="text-[24px] lg:text-[32px]">{title}</p>
+        <h2 className="text-[40px] lg:text-[64px] font-bold text-[#DB5353]">
+          {quantity}
+          {suffix}
+        </h2>
+        <p className="text-[24px] lg:text-[32px] text-nowrap">{title.toUpperCase()}</p>
     </article>
   );
 };
@@ -74,11 +74,13 @@ const Statistic = () => {
   return (
     <section
       aria-label="სტატისტიკა"
-      className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-4 lg:gap-6 my-18 lg:my-40 mx-4 md:mx-6 lg:mx-40"
+      className=""
     >
-      {statistics.map((item) => (
-        <StatisticChild key={item.title} {...item} />
-      ))}
+      <div className="max-w-300 mx-auto flex flex-col gap-8 items-center my-18 lg:my-40 w-full md:flex-row md:gap-4 md:px-6 md:justify-around lg:gap-6">
+        {statistics.map((item) => (
+          <StatisticChild key={item.title} {...item} />
+        ))}
+     </div>
     </section>
   );
 };

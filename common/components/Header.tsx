@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 
@@ -51,6 +52,18 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [filteredData, setFilteredData] = useState(arr);
+
+  const pathname = usePathname();
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
 
 
   useEffect(() => {
@@ -236,6 +249,7 @@ const Header = () => {
           <ul className="flex">
             <li className="p-4 xl:py-4 xl:px-6">
               <Link
+                onClick={handleHomeClick}
                 className="hover:text-[#4D7CCE] duration-200 ease-in-out text-[20px] lg:text-[24px] text-nowrap lg:leading-6"
                 href="/ka"
               >
@@ -245,7 +259,7 @@ const Header = () => {
             <li className="p-4 xl:py-4 xl:px-6">
               <Link
                 className="hover:text-[#4D7CCE] duration-200 ease-in-out text-[20px] lg:text-[24px] text-nowrap lg:leading-6"
-                href="#"
+                href="/ka/#about-us"
               >
                 {"ჩვენ შესახებ".toUpperCase()}
               </Link>
@@ -254,6 +268,7 @@ const Header = () => {
               <Link
                 className="hover:text-[#4D7CCE] duration-200 ease-in-out text-[20px] lg:text-[24px] text-nowrap lg:leading-6"
                 href="/ka/project"
+                scroll={true}
               >
                 {"პროექტები".toUpperCase()}
               </Link>

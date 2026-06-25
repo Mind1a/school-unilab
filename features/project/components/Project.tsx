@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import {  useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import ProjectActiveBtn from "./ProjectActiveBtn";
 import { projectsData } from "./data";
@@ -13,13 +13,18 @@ const Project = () => {
     setIsFilterOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   return (
-    <div className="flex h-auto w-full flex-col items-center px-4 mt-6 mb-[91.39px] md:mt-0 md:mb-[72.44px] md:px-[24.5px] lg:mt-8 lg:mb-[139.33px] lg:px-30">
+    <div className={`max-w-300 px-4 md:px-6 lg:px-8 xl:px-0 mb-26 mx-auto w-full flex flex-col mt-30  items-start xl:mt-40`}>
       {isFilterOpen ? (
         <ProjectActiveBtn onFilterClick={toggleFilter} />
       ) : (
-        <div className="flex h-12 w-full max-w-89.5 items-center justify-between md:max-w-196.25 md:justify-start lg:h-18 lg:max-w-300">
-          <h2 className="order-1 font-mecomisce text-[24px] leading-6 md:order-2 md:ml-4.75 md:text-[32px] md:leading-12 lg:ml-8.25 lg:text-[48px] lg:leading-14">
+          <div className="flex items-center justify-between md:justify-start w-full">
+            <h2 className="order-1  md:text-nowrap font-mecomisce text-[24px] leading-6 md:order-2 md:ml-4.75 md:text-[32px] md:leading-12 lg:ml-8.25 xl:text-[48px] lg:leading-14">
             <span>{"შეარჩიე შენთვის საინტერესო პროექტი".toUpperCase()}</span>
           </h2>
 
@@ -49,7 +54,7 @@ const Project = () => {
       )}
 
       <div
-        className={`h-auto w-full flex-col items-center px-4 mt-9 md:mt-6 lg:mt-14 ${
+        className={` w-full flex-col items-center mt-9 md:mt-6 lg:mt-14 ${
           isFilterOpen ? "hidden md:flex" : "flex"
         }`}
       >

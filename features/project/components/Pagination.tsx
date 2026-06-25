@@ -18,12 +18,10 @@ const Pagination = ({ projects }: PaginationProps) => {
   useEffect(() => {
     const updateItemsPerPage = () => {
       const isTabletOrDesktop = window.innerWidth >= 768;
-
       setItemsPerPage(isTabletOrDesktop ? 15 : 7);
     };
 
     updateItemsPerPage();
-
     window.addEventListener("resize", updateItemsPerPage);
 
     return () => {
@@ -31,17 +29,13 @@ const Pagination = ({ projects }: PaginationProps) => {
     };
   }, []);
 
-  const totalPages = Math.ceil(projects.length / itemsPerPage);
 
-  useEffect(() => {
-    if (currentPage > totalPages) {
-      setCurrentPage(totalPages || 1);
-    }
-  }, [currentPage, totalPages]);
+  const totalPages = Math.ceil(projects.length / itemsPerPage) || 1;
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
+  const activePage = Math.min(currentPage, totalPages);
+
+  const startIndex = (activePage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-
   const currentProjects = projects.slice(startIndex, endIndex);
 
   const goToPreviousPage = () => {
@@ -57,18 +51,18 @@ const Pagination = ({ projects }: PaginationProps) => {
       return Array.from({ length: totalPages }, (_, index) => index + 1);
     }
 
-    if (currentPage <= 3) {
+    if (activePage <= 3) {
       return [1, 2, 3, "end-ellipsis", totalPages];
     }
 
-    if (currentPage >= totalPages - 2) {
+    if (activePage >= totalPages - 2) {
       return [1, "start-ellipsis", totalPages - 2, totalPages - 1, totalPages];
     }
 
     return [
-      currentPage - 2,
-      currentPage - 1,
-      currentPage,
+      activePage - 2,
+      activePage - 1,
+      activePage,
       "end-ellipsis",
       totalPages,
     ];
@@ -76,7 +70,7 @@ const Pagination = ({ projects }: PaginationProps) => {
 
   return (
     <div className="w-full">
-      <div className="mx-auto w-full max-w-89.5 md:max-w-196.25 lg:max-w-300">
+      <div className="mx-auto w-full max-w-300">
         <ul className="grid w-full grid-cols-1 gap-4 md:grid-cols-3 md:gap-5.5 lg:gap-6">
           {currentProjects.map((project) => (
             <Card key={project.id} project={project} />
@@ -89,7 +83,7 @@ const Pagination = ({ projects }: PaginationProps) => {
           <button
             type="button"
             onClick={goToPreviousPage}
-            disabled={currentPage === 1}
+            disabled={activePage === 1}
             className="flex items-center justify-center"
           >
             <Image
@@ -99,7 +93,7 @@ const Pagination = ({ projects }: PaginationProps) => {
               height={48}
               style={{
                 filter:
-                  currentPage === 1
+                  activePage === 1
                     ? "brightness(0) saturate(100%) invert(75%)"
                     : "none",
               }}
@@ -120,16 +114,15 @@ const Pagination = ({ projects }: PaginationProps) => {
             }
 
             const page = item;
-            const isActive = currentPage === page;
+            const isActive = activePage === page;
 
             return (
               <button
                 key={page}
                 type="button"
                 onClick={() => setCurrentPage(page)}
-                className={`flex h-10 w-10 items-center justify-center font-mecomisce text-[24px] md:text-[32px] ${
-                  isActive ? "text-[rgba(77,124,206,1)]" : "text-black"
-                }`}
+                className={`flex h-10 w-10 items-center justify-center font-mecomisce text-[24px] md:text-[32px] ${isActive ? "text-[rgba(77,124,206,1)]" : "text-black"
+                  }`}
               >
                 {page}
               </button>
@@ -139,7 +132,7 @@ const Pagination = ({ projects }: PaginationProps) => {
           <button
             type="button"
             onClick={goToNextPage}
-            disabled={currentPage === totalPages}
+            disabled={activePage === totalPages}
             className="flex items-center justify-center"
           >
             <Image
@@ -149,7 +142,7 @@ const Pagination = ({ projects }: PaginationProps) => {
               height={48}
               style={{
                 filter:
-                  currentPage === totalPages
+                  activePage === totalPages
                     ? "brightness(0) saturate(100%) invert(75%)"
                     : "none",
               }}
@@ -165,9 +158,9 @@ export default Pagination;
 
 const Card = ({ project }: { project: ProjectData }) => {
   return (
-    <li className="h-72 w-full md:h-65 lg:h-90">
-      <article className="flex h-full w-full flex-col items-center overflow-hidden rounded-2xl border-2 border-black bg-white shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)]">
-        <div className="relative h-40 w-full overflow-hidden md:h-35 lg:h-50">
+    <li className="w-full shrink-0 snap-center md:w-full md:max-w-[384px]">
+      <article className="flex flex-col w-full h-full rounded-2xl overflow-hidden bg-white border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)]">
+        <div className="relative w-full aspect-4/3 overflow-hidden shrink-0">
           <Image
             src={project.image}
             alt={project.title}
@@ -182,7 +175,6 @@ const Card = ({ project }: { project: ProjectData }) => {
               width={20}
               height={20}
             />
-
             <span className="ml-2 text-[16px]">კურსები</span>
           </div>
         </div>
@@ -197,7 +189,7 @@ const Card = ({ project }: { project: ProjectData }) => {
           <div className="mt-4 flex h-6 w-full items-center justify-between bg-white lg:mt-6">
             <Link
               href={project.href}
-              className="group flex items-center text-[14px] text-[rgba(77,124,206,1)]"
+              className="group flex items-center text-[14px] lg:leading-6 text-[rgba(77,124,206,1)] shrink-0"
             >
               <Image
                 src="/images/discover-projects/view-more.svg"
@@ -206,7 +198,6 @@ const Card = ({ project }: { project: ProjectData }) => {
                 height={20}
                 className="block group-hover:hidden"
               />
-
               <Image
                 src="/images/discover-projects/view-more-hover.svg"
                 alt=""
@@ -214,15 +205,14 @@ const Card = ({ project }: { project: ProjectData }) => {
                 height={20}
                 className="hidden group-hover:block"
               />
-
-              <span className="ml-2 group-hover:text-[rgba(148,176,226,1)]">
+              <span className="ml-2 group-hover:text-[rgba(148,176,226,1)] transition-colors whitespace-nowrap">
                 დეტალურად
               </span>
             </Link>
 
             <time
               dateTime={project.dateTime}
-              className="text-[12px] text-[rgba(102,102,102,1)]"
+              className="text-[12px] md:text-[12px] lg:text-[16px] font-light lg:leading-6 text-[rgba(102,102,102,1)] shrink-0 whitespace-nowrap font-mecomisce ml-2"
             >
               {project.date}
             </time>

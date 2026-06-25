@@ -95,7 +95,7 @@ const ProjectDetailItem = ({ detail }: ProjectDetailItemProps) => {
       </div>
 
       {isDescription ? (
-        <div className="font-sans lg:text-xl max-w-[1176px] w-full">
+        <div className="font-sans lg:text-xl max-w-294 w-full">
           {content.map((para, i) => (
             <p
               key={para.id}
@@ -106,7 +106,7 @@ const ProjectDetailItem = ({ detail }: ProjectDetailItemProps) => {
           ))}
         </div>
       ) : (
-        <p className="font-sans lg:text-xl max-w-[816px] w-full">
+        <p className="font-sans lg:text-xl max-w-204 w-full">
           {detail.content as string}
         </p>
       )}
@@ -116,8 +116,8 @@ const ProjectDetailItem = ({ detail }: ProjectDetailItemProps) => {
 // TemProject
 const TemProject = () => {
   return (
-    <section className="mx-[14px] xl:mt-37 md:mt-30 mt-25 mt-2 mb-[198px] md:mx-[24px] md:mt-0 md:mb-[64px] lg:mx-[120px] lg:mt-[31.5px] lg:mb-[120px] flex justify-center items-center">
-      <article className="max-w-[1200px] w-full">
+    <section className="mx-3.5 xl:mt-37 md:mt-30 mt-25  mb-49.5 md:mx-6 md:mb-16 lg:mx-30 lg:mt-[31.5px] lg:mb-30 flex justify-center items-center">
+      <article className="max-w-300 w-full">
         <div>
           {/* Breadcrumbs */}
           <nav aria-label="breadcrumb" className="hidden md:block mb-4 ">
@@ -145,7 +145,6 @@ const TemProject = () => {
             />
           </div>
         </div>
-
         {/* Badge + Date */}
         <div className="flex justify-between items-center mt-2 mb-[72px] md:mt-[64px] md:mb-[56px] lg:mt-[16px]">
           <button className="flex gap-2 bg-[#94B0E2] px-3 py-3.5 rounded-full text-sm md:text-[16px] border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] font-sans">
@@ -162,12 +161,12 @@ const TemProject = () => {
             <span>ვორკშოპი</span>
           </button>
 
-          <time
-            dateTime="2026-01-12"
+          <span
+
             className="text-[#666666] font-mecomisce md:text-xl lg:text-[32px]"
           >
             12 იან 2026
-          </time>
+          </span>
         </div>
 
         {/* Title */}
@@ -184,7 +183,7 @@ const TemProject = () => {
 
         <button
           className="flex items-center justify-center gap-2 bg-[#F87060] px-3 py-3.5 rounded-full text-xl md:text-2xl border-2 border-black
-         shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] font-mecomisce mt-[20px] md:mt-[32px] lg:mt-[48px] cursor-pointer w-full md:w-auto "
+         shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] font-mecomisce mt-[20px] md:mt-[32px] lg:mt-[48px] cursor-pointer w-full md:w-auto hover:bg-[#7196D8] "
         >
           <span>{"დარეგისტრირდი ახლავე".toUpperCase()}</span>
           <div className="w-6 h-6 flex items-center justify-center shrink-0">

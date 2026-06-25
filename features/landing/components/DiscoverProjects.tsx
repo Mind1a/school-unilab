@@ -39,8 +39,8 @@ type Project = {
 
 const DiscoverProjects = () => {
   return (
-    <section className="mt-18 flex w-full  justify-center px-4 pb-4 md:px-6 lg:mt-14 ">
-      <div className="flex w-full max-w-300  flex-col items-center">
+    <section className="mt-18  flex w-full my-18 lg:my-40  justify-center px-4 pb-4 md:px-6 lg:mt-14 ">
+      <div className="flex w-full  max-w-300  flex-col items-center">
         <header className="flex min-h-12 w-full items-center justify-center lg:min-h-14.5">
           <h2 className="font-mecomisce text-[24px] leading-6 md:text-[32px] lg:text-[48px] lg:leading-none">
             {"აღმოაჩინე ახალი პროექტები".toUpperCase()}
@@ -90,10 +90,9 @@ const DiscoverProjects = () => {
 
 const Card = ({ project }: { project: Project }) => {
   return (
-    <li className="w-[280px] shrink-0 snap-center md:w-full md:max-w-[384px]">
-      <article className="flex flex-col w-full h-full rounded-2xl overflow-hidden bg-white border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)]">
-
-        <div className="relative w-full aspect-[4/3] overflow-hidden shrink-0">
+    <li className="w-[280px] pl-2 shrink-0 snap-center md:w-full md:max-w-[384px]">
+      <article className="flex flex-col  w-full h-full rounded-2xl overflow-hidden bg-white border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)]">
+        <div className="relative w-full aspect-[4/3]  overflow-hidden shrink-0">
           <Image
             src={project.image}
             alt={project.title}
@@ -118,7 +117,7 @@ const Card = ({ project }: { project: Project }) => {
           <div className="flex justify-between items-center w-full mt-auto bg-white pt-2">
             <Link
               href={project.href}
-              className="group flex items-center text-[14px] text-[rgba(77,124,206,1)] shrink-0"
+              className="group flex items-center text-[14px] lg:leading-6 text-[rgba(77,124,206,1)] shrink-0"
             >
               <Image src="/images/discover-projects/view-more.svg" alt="" width={20} height={20} className="block group-hover:hidden" />
               <Image src="/images/discover-projects/view-more-hover.svg" alt="" width={20} height={20} className="hidden group-hover:block" />
@@ -127,7 +126,7 @@ const Card = ({ project }: { project: Project }) => {
               </span>
             </Link>
 
-            <time dateTime={project.dateTime} className="text-[12px] text-[rgba(102,102,102,1)] shrink-0 whitespace-nowrap ml-2">
+            <time dateTime={project.dateTime} className="text-[12px] md:text-[12px]  lg:text-[16px] font-light lg:leading-6 text-[rgba(102,102,102,1)] shrink-0 whitespace-nowrap font-mecomisce ml-2">
               {project.date}
             </time>
           </div>
