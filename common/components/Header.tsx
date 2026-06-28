@@ -4,14 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-
 type ArrpType = {
-  id: number,
-  text: string
-  tag: string
-  href: string
-  icon: string
-}
+  id: number;
+  text: string;
+  tag: string;
+  href: string;
+  icon: string;
+};
 
 const arr: ArrpType[] = [
   {
@@ -19,7 +18,7 @@ const arr: ArrpType[] = [
     text: "ვიზუალური პროგრამირების ვორკშოპი",
     tag: "ვორკშოპი",
     href: "/",
-    icon: "/images/header/knowledge.svg"
+    icon: "/images/header/knowledge.svg",
   },
 
   {
@@ -27,14 +26,14 @@ const arr: ArrpType[] = [
     text: "უნილაბის ვორკშოპი",
     tag: "ვორკშოპი",
     href: "/",
-    icon: "/images/header/knowledge.svg"
+    icon: "/images/header/knowledge.svg",
   },
   {
     id: 3,
     text: "ტექსტი მეორე ხაზზე გამოჩნდება ასე ვიზუალური პროგრამირების რაღაცა ვორკშოპი",
     tag: "ვორკშოპი",
     href: "/",
-    icon: "/images/header/knowledge.svg"
+    icon: "/images/header/knowledge.svg",
   },
 
   {
@@ -42,15 +41,15 @@ const arr: ArrpType[] = [
     text: "პროგრამირების ვორკშოპი",
     tag: "ვორკშოპი",
     href: "/",
-    icon: "/images/header/knowledge.svg"
-  }
-]
+    icon: "/images/header/knowledge.svg",
+  },
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [changeLang, setChangeLang] = useState("en");
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState(arr);
 
   const pathname = usePathname();
@@ -65,25 +64,20 @@ const Header = () => {
     }
   };
 
-
   useEffect(() => {
     if (!searchQuery.trim()) {
       return;
     }
 
     const displayDebounce = setTimeout(() => {
-      const result = arr.filter(item =>
-        item.text.toLowerCase().includes(searchQuery.toLowerCase())
+      const result = arr.filter((item) =>
+        item.text.toLowerCase().includes(searchQuery.toLowerCase()),
       );
       setFilteredData(result);
     }, 500);
 
     return () => clearTimeout(displayDebounce);
   }, [searchQuery]);
-
-
-
-
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
@@ -111,21 +105,40 @@ const Header = () => {
     setChangeLang((prev) => (prev === "en" ? "ქარ" : "en"));
   };
 
-
   return (
     <header className=" w-full fixed  bg-white  z-50 flex justify-center">
-      <div className={`fixed
+      <div
+        className={`fixed
         ${isSearchOpen ? "opacity-100 lg:top-30 md:top-28 xl:top-34 top-24 " : "-top-1000 opacity-0"}
         duration-200 flex flex-col transition-opacity
-          z-100 w-full  `}>
-        <div className="
-        bg-[#4D7CCE] border-4 relative border-[#000000] py-9 px-4.25 lg:px-30 lg:py-22 md:py-12 md:px-17.5 max-w-360 w-full mx-auto">
+          z-100 w-full  `}
+      >
+        <div
+          className="
+        bg-[#4D7CCE] border-4 relative border-[#000000] py-9 px-4.25 lg:px-30 lg:py-22 md:py-12 md:px-17.5 max-w-360 w-full mx-auto"
+        >
           <div className="w-full">
             <form className="flex flex-col gap-6 w-full">
-              <button onClick={() => setIsSearchOpen(false)} type="button" className="absolute right-0 top-0 p-2 md:p-0 md:right-6 md:top-6 cursor-pointer">
-                <svg width="16" height="16" className="md:w-8 md:h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <button
+                onClick={() => setIsSearchOpen(false)}
+                type="button"
+                className="absolute right-0 top-0 p-2 md:p-0 md:right-6 md:top-6 cursor-pointer"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  className="md:w-8 md:h-8"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <g clip-path="url(#clip0_1066_5457)">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M30.9058 8.31994C31.3322 7.69371 31.6983 7.02852 31.9992 6.33327C32.0109 6.15081 31.9851 5.96788 31.9231 5.79585C31.8612 5.62382 31.7645 5.46636 31.6392 5.33327C30.5412 4.17761 29.3206 3.14486 27.9992 2.25327C27.4125 1.79654 26.7487 1.44881 26.0392 1.2266C25.8951 1.20197 25.747 1.21478 25.6093 1.26381C25.4715 1.31284 25.3487 1.39645 25.2525 1.5066C24.8392 1.9866 23.9192 2.75994 22.9325 3.7066C22.5992 4.0266 22.2525 4.37327 21.9325 4.7466C19.9992 6.83994 17.9858 9.33327 17.0258 10.4266C14.9992 8.31994 10.7325 3.75994 8.61251 2.0266C8.195 1.65318 7.69802 1.37961 7.15918 1.2266C7.03806 1.196 6.91209 1.18967 6.78852 1.20797C6.66494 1.22628 6.54622 1.26887 6.43918 1.33327C6.31918 1.47994 1.33251 4.89327 0.265843 6.81327C0.119927 7.03596 0.0313896 7.2913 0.00812497 7.55651C-0.0151396 7.82173 0.0275921 8.08858 0.13251 8.33327C0.370208 8.7392 0.666764 9.10765 1.01251 9.42661C1.42873 9.86102 1.87421 10.2664 2.34584 10.6399C2.67918 10.8933 3.55918 11.6799 4.58584 12.6399C6.25251 14.1466 8.26584 15.9999 9.25251 16.9999C7.91918 18.1466 4.81251 20.8399 2.97251 22.6799C2.41698 23.1967 1.9206 23.7735 1.49251 24.3999C1.38496 24.5723 1.32514 24.7702 1.31918 24.9733C1.4914 25.5454 1.81366 26.0611 2.25251 26.4666C3.48549 27.7174 4.78045 28.9056 6.13251 30.0266C6.33251 30.1999 6.67918 30.9466 7.34584 30.7599C7.60517 30.6256 7.84699 30.46 8.06584 30.2666C8.43918 29.9999 10.5592 28.2533 12.7592 26.3466C14.3058 25.0133 15.8792 23.5999 16.9192 22.5733L17.4658 23.0266C19.7058 24.8799 25.2658 29.6266 25.4658 29.9999C25.4927 30.0536 25.5299 30.1014 25.5754 30.1406C25.6209 30.1797 25.6737 30.2095 25.7307 30.2281C25.7878 30.2467 25.848 30.2538 25.9078 30.249C25.9676 30.2441 26.0259 30.2275 26.0792 30.1999L26.5192 29.9333C27.3058 29.3999 28.9992 28.1199 29.9992 27.2666C30.0379 27.2282 30.0686 27.1825 30.0896 27.1321C30.1105 27.0818 30.1213 27.0278 30.1213 26.9733C30.1213 26.9187 30.1105 26.8647 30.0896 26.8144C30.0686 26.7641 30.0379 26.7184 29.9992 26.6799C29.9619 26.6416 29.9173 26.6112 29.8681 26.5904C29.8189 26.5696 29.766 26.5589 29.7125 26.5589C29.6591 26.5589 29.6062 26.5696 29.5569 26.5904C29.5077 26.6112 29.4631 26.6416 29.4258 26.6799C28.4392 27.5066 26.7592 28.7466 25.9858 29.2533H25.9058C24.6658 27.9999 20.1058 23.9199 18.1192 22.2133L17.3325 21.5066C17.218 21.4179 17.0773 21.3698 16.9325 21.3698C16.7877 21.3698 16.647 21.4179 16.5325 21.5066C15.5058 22.5199 13.7458 24.0399 12.0258 25.5066C9.85251 27.3333 7.75918 29.0133 7.38584 29.2666L7.25251 29.3733L6.99918 29.1066C6.55918 28.7199 5.55918 27.8399 4.62584 26.9333C3.98077 26.3646 3.38734 25.74 2.85251 25.0666C2.9115 24.9398 2.98296 24.8192 3.06584 24.7066C3.90754 23.818 4.7978 22.9767 5.73251 22.1866C7.99918 19.9999 10.8925 17.6133 10.8925 17.6133C10.9745 17.5445 11.0407 17.4589 11.0867 17.3623C11.1328 17.2657 11.1575 17.1603 11.1592 17.0533C11.1662 16.9469 11.1495 16.8403 11.1103 16.7411C11.0711 16.642 11.0104 16.5528 10.9325 16.4799C10.9325 16.4799 7.99918 13.5866 5.70584 11.4933C4.61251 10.4799 3.69251 9.63994 3.33251 9.33327C2.90557 9.0141 2.50433 8.66191 2.13251 8.27994C2.01475 8.15897 2.14098 8.13784 2.62098 7.57784C2.92764 7.21784 3.28764 6.89784 3.47431 6.6845C4.79571 5.45315 6.21357 4.32956 7.71431 3.32451C7.90361 3.44789 7.4243 3.13685 7.59918 3.27994C9.91918 5.13327 14.8125 10.3733 16.5058 11.9999C16.5779 12.0737 16.6639 12.1323 16.759 12.1724C16.854 12.2124 16.9561 12.233 17.0592 12.233C17.1623 12.233 17.2644 12.2124 17.3594 12.1724C17.4544 12.1323 17.5405 12.0737 17.6125 11.9999C17.7058 11.9066 17.8925 11.6933 18.1458 11.3866C19.0925 10.2533 21.0925 7.7866 22.9592 5.6666L26.0392 2.5866H26.1592C27.6101 3.40361 28.9537 4.39791 30.1592 5.5466C30.353 5.73101 30.5356 5.92692 30.7058 6.13327C30.4605 6.63861 30.1845 7.12842 29.8792 7.59994C29.5208 8.15487 29.1196 8.68092 28.6792 9.17327L23.1992 15.5066C23.107 15.6169 23.0564 15.7562 23.0564 15.8999C23.0564 16.0437 23.107 16.1829 23.1992 16.2933C23.4233 16.6035 23.6636 16.9017 23.9192 17.1866C25.4525 18.9599 28.9458 22.7733 30.3058 24.5333C30.5458 24.8399 30.6392 25.2133 30.7592 25.2133C30.7751 25.3243 30.8266 25.4272 30.9058 25.5066C30.9493 25.5509 31.0012 25.5862 31.0584 25.6102C31.1156 25.6343 31.1771 25.6467 31.2392 25.6467C31.3013 25.6467 31.3627 25.6343 31.42 25.6102C31.4772 25.5862 31.5291 25.5509 31.5725 25.5066C31.6499 25.395 31.6914 25.2624 31.6914 25.1266C31.6914 24.9908 31.6499 24.8582 31.5725 24.7466C31.1717 24.1113 30.7261 23.5053 30.2392 22.9333C28.5592 20.8933 25.7858 17.7866 24.5992 16.3599L24.2658 15.9999L29.5992 10.0266C30.0743 9.48912 30.5109 8.91882 30.9058 8.31994Z" fill="black" />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M30.9058 8.31994C31.3322 7.69371 31.6983 7.02852 31.9992 6.33327C32.0109 6.15081 31.9851 5.96788 31.9231 5.79585C31.8612 5.62382 31.7645 5.46636 31.6392 5.33327C30.5412 4.17761 29.3206 3.14486 27.9992 2.25327C27.4125 1.79654 26.7487 1.44881 26.0392 1.2266C25.8951 1.20197 25.747 1.21478 25.6093 1.26381C25.4715 1.31284 25.3487 1.39645 25.2525 1.5066C24.8392 1.9866 23.9192 2.75994 22.9325 3.7066C22.5992 4.0266 22.2525 4.37327 21.9325 4.7466C19.9992 6.83994 17.9858 9.33327 17.0258 10.4266C14.9992 8.31994 10.7325 3.75994 8.61251 2.0266C8.195 1.65318 7.69802 1.37961 7.15918 1.2266C7.03806 1.196 6.91209 1.18967 6.78852 1.20797C6.66494 1.22628 6.54622 1.26887 6.43918 1.33327C6.31918 1.47994 1.33251 4.89327 0.265843 6.81327C0.119927 7.03596 0.0313896 7.2913 0.00812497 7.55651C-0.0151396 7.82173 0.0275921 8.08858 0.13251 8.33327C0.370208 8.7392 0.666764 9.10765 1.01251 9.42661C1.42873 9.86102 1.87421 10.2664 2.34584 10.6399C2.67918 10.8933 3.55918 11.6799 4.58584 12.6399C6.25251 14.1466 8.26584 15.9999 9.25251 16.9999C7.91918 18.1466 4.81251 20.8399 2.97251 22.6799C2.41698 23.1967 1.9206 23.7735 1.49251 24.3999C1.38496 24.5723 1.32514 24.7702 1.31918 24.9733C1.4914 25.5454 1.81366 26.0611 2.25251 26.4666C3.48549 27.7174 4.78045 28.9056 6.13251 30.0266C6.33251 30.1999 6.67918 30.9466 7.34584 30.7599C7.60517 30.6256 7.84699 30.46 8.06584 30.2666C8.43918 29.9999 10.5592 28.2533 12.7592 26.3466C14.3058 25.0133 15.8792 23.5999 16.9192 22.5733L17.4658 23.0266C19.7058 24.8799 25.2658 29.6266 25.4658 29.9999C25.4927 30.0536 25.5299 30.1014 25.5754 30.1406C25.6209 30.1797 25.6737 30.2095 25.7307 30.2281C25.7878 30.2467 25.848 30.2538 25.9078 30.249C25.9676 30.2441 26.0259 30.2275 26.0792 30.1999L26.5192 29.9333C27.3058 29.3999 28.9992 28.1199 29.9992 27.2666C30.0379 27.2282 30.0686 27.1825 30.0896 27.1321C30.1105 27.0818 30.1213 27.0278 30.1213 26.9733C30.1213 26.9187 30.1105 26.8647 30.0896 26.8144C30.0686 26.7641 30.0379 26.7184 29.9992 26.6799C29.9619 26.6416 29.9173 26.6112 29.8681 26.5904C29.8189 26.5696 29.766 26.5589 29.7125 26.5589C29.6591 26.5589 29.6062 26.5696 29.5569 26.5904C29.5077 26.6112 29.4631 26.6416 29.4258 26.6799C28.4392 27.5066 26.7592 28.7466 25.9858 29.2533H25.9058C24.6658 27.9999 20.1058 23.9199 18.1192 22.2133L17.3325 21.5066C17.218 21.4179 17.0773 21.3698 16.9325 21.3698C16.7877 21.3698 16.647 21.4179 16.5325 21.5066C15.5058 22.5199 13.7458 24.0399 12.0258 25.5066C9.85251 27.3333 7.75918 29.0133 7.38584 29.2666L7.25251 29.3733L6.99918 29.1066C6.55918 28.7199 5.55918 27.8399 4.62584 26.9333C3.98077 26.3646 3.38734 25.74 2.85251 25.0666C2.9115 24.9398 2.98296 24.8192 3.06584 24.7066C3.90754 23.818 4.7978 22.9767 5.73251 22.1866C7.99918 19.9999 10.8925 17.6133 10.8925 17.6133C10.9745 17.5445 11.0407 17.4589 11.0867 17.3623C11.1328 17.2657 11.1575 17.1603 11.1592 17.0533C11.1662 16.9469 11.1495 16.8403 11.1103 16.7411C11.0711 16.642 11.0104 16.5528 10.9325 16.4799C10.9325 16.4799 7.99918 13.5866 5.70584 11.4933C4.61251 10.4799 3.69251 9.63994 3.33251 9.33327C2.90557 9.0141 2.50433 8.66191 2.13251 8.27994C2.01475 8.15897 2.14098 8.13784 2.62098 7.57784C2.92764 7.21784 3.28764 6.89784 3.47431 6.6845C4.79571 5.45315 6.21357 4.32956 7.71431 3.32451C7.90361 3.44789 7.4243 3.13685 7.59918 3.27994C9.91918 5.13327 14.8125 10.3733 16.5058 11.9999C16.5779 12.0737 16.6639 12.1323 16.759 12.1724C16.854 12.2124 16.9561 12.233 17.0592 12.233C17.1623 12.233 17.2644 12.2124 17.3594 12.1724C17.4544 12.1323 17.5405 12.0737 17.6125 11.9999C17.7058 11.9066 17.8925 11.6933 18.1458 11.3866C19.0925 10.2533 21.0925 7.7866 22.9592 5.6666L26.0392 2.5866H26.1592C27.6101 3.40361 28.9537 4.39791 30.1592 5.5466C30.353 5.73101 30.5356 5.92692 30.7058 6.13327C30.4605 6.63861 30.1845 7.12842 29.8792 7.59994C29.5208 8.15487 29.1196 8.68092 28.6792 9.17327L23.1992 15.5066C23.107 15.6169 23.0564 15.7562 23.0564 15.8999C23.0564 16.0437 23.107 16.1829 23.1992 16.2933C23.4233 16.6035 23.6636 16.9017 23.9192 17.1866C25.4525 18.9599 28.9458 22.7733 30.3058 24.5333C30.5458 24.8399 30.6392 25.2133 30.7592 25.2133C30.7751 25.3243 30.8266 25.4272 30.9058 25.5066C30.9493 25.5509 31.0012 25.5862 31.0584 25.6102C31.1156 25.6343 31.1771 25.6467 31.2392 25.6467C31.3013 25.6467 31.3627 25.6343 31.42 25.6102C31.4772 25.5862 31.5291 25.5509 31.5725 25.5066C31.6499 25.395 31.6914 25.2624 31.6914 25.1266C31.6914 24.9908 31.6499 24.8582 31.5725 24.7466C31.1717 24.1113 30.7261 23.5053 30.2392 22.9333C28.5592 20.8933 25.7858 17.7866 24.5992 16.3599L24.2658 15.9999L29.5992 10.0266C30.0743 9.48912 30.5109 8.91882 30.9058 8.31994Z"
+                      fill="black"
+                    />
                   </g>
                   <defs>
                     <clipPath id="clip0_1066_5457">
@@ -138,7 +151,8 @@ const Header = () => {
               <h2 className="lg:text-[32px] hidden md:block lg:leading-12 md:leading-6 font-mecomisce md:text-[24px]">
                 {"რას ეძებ კიბერმოგზაურო?".toUpperCase()}
               </h2>
-              <label className="flex relative
+              <label
+                className="flex relative
           after:absolute after:content-['']
           after:w-full
           after:h-17
@@ -147,7 +161,8 @@ const Header = () => {
           after:-left-1
           after:-z-1
           after:rounded-xl
-          items-center bg-white p-4 rounded-xl border-2 shadow-lg shadow-[#00000033]">
+          items-center bg-white p-4 rounded-xl border-2 shadow-lg shadow-[#00000033]"
+              >
                 <SearchIcon
                   className="
           md:w-8
@@ -161,79 +176,91 @@ const Header = () => {
             "
                 />
 
-                <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="text" className="px-3 w-full font-sans text-[14px]  border-none outline-none" required />
+                <input
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  type="text"
+                  className="px-3 w-full font-sans text-[14px]  border-none outline-none"
+                  required
+                />
               </label>
             </form>
           </div>
         </div>
-        {
-          searchQuery && (
-            <div className="w-full bg-white   ">
-              <div className="max-w-304.5 w-full overflow-y-auto h-200 flex flex-col gap-8 mx-auto">
-                {
-                  searchQuery && (
-                    <div className="w-full bg-white py-8 max-h-screen px-4 md:py-16 md:px-18.75 lg:h-100 overflow-y-auto">
-                      <div className="max-w-304.5 w-full flex flex-col  mx-auto">
-                        {filteredData.length === 0 ? (
-                          <div className="flex flex-col items-center gap-15 text-gray-500 ">
-                            <h2 className="text-[#F87060] lg:text-[48px] text-[24px] leading-6 text-center flex-col flex lg:leading-14 font-mecomisce">
-                              {"შედეგი ვერ მოიძებნა".toUpperCase()}
-                              <span className="text-[24px] leading-6 text-[#666666]">
-                                {"კიდევ სცადე!".toUpperCase()}
-                              </span>
-                            </h2>
-                            <Image width={100} height={100} src={'/images/header/search-not-found.svg'} className="lg:w-43.25 lg:h-36" alt="not-found-icon" />
-                          </div>
-                        ) : (
-                            <ul className="flex flex-col gap-6">
-                              {
-                                filteredData.map((item) => {
-                                  const renderHighlightedText = (fullText: string) => {
-                                    if (!searchQuery) {
-                                      return fullText;
-                                    }
-
-                                    const cleanSearch = searchQuery.trim();
-                                    const regex = new RegExp(`(${cleanSearch})`, "gi");
-                                    const parts = fullText.split(regex);
-
-                                    return parts.map((part, index) =>
-                                      part.toLowerCase() === cleanSearch.toLowerCase() ? (
-                                        <span key={index} className="text-[#3E63A5]">
-                                          {part}
-                                        </span>
-                                      ) : (
-                                        part
-                                      )
-                                    );
-                                  };
-
-                                  return (
-                                    <li key={item.id} className="list-none">
-                                      <Link href={`/TempProject/${item.id}`} className="flex items-center gap-4 leading-5">
-                                        <Image width={48} height={48} src={item.icon} className="w-6 h-6 md:w-12 md:h-12" alt="Link Icon" />
-                                        <p className="leading-5 md:leading-6 md:text-[24px] lg:text-[32px] lg:leading-12 text-black">
-                                          {renderHighlightedText(item.text)}
-                                        </p>
-                                      </Link>
-                                    </li>
-                                  );
-                                })
-                              }
-                          </ul>
-
-                        )}
+        {searchQuery && (
+          <div className="w-full bg-white   ">
+            <div className="max-w-304.5 w-full overflow-y-auto h-200 flex flex-col gap-8 mx-auto">
+              {searchQuery && (
+                <div className="w-full bg-white py-8 max-h-screen px-4 md:py-16 md:px-18.75 lg:h-100 overflow-y-auto">
+                  <div className="max-w-304.5 w-full flex flex-col  mx-auto">
+                    {filteredData.length === 0 ? (
+                      <div className="flex flex-col items-center gap-15 text-gray-500 ">
+                        <h2 className="text-[#F87060] lg:text-[48px] text-[24px] leading-6 text-center flex-col flex lg:leading-14 font-mecomisce">
+                          {"შედეგი ვერ მოიძებნა".toUpperCase()}
+                          <span className="text-[24px] leading-6 text-[#666666]">
+                            {"კიდევ სცადე!".toUpperCase()}
+                          </span>
+                        </h2>
+                        <Image
+                          width={100}
+                          height={100}
+                          src={"/images/header/search-not-found.svg"}
+                          className="lg:w-43.25 lg:h-36"
+                          alt="not-found-icon"
+                        />
                       </div>
-                    </div>
-                  )
-                }
-              </div>
+                    ) : (
+                      <ul className="flex flex-col gap-6">
+                        {filteredData.map((item) => {
+                          const renderHighlightedText = (fullText: string) => {
+                            if (!searchQuery) {
+                              return fullText;
+                            }
 
+                            const cleanSearch = searchQuery.trim();
+                            const regex = new RegExp(`(${cleanSearch})`, "gi");
+                            const parts = fullText.split(regex);
 
+                            return parts.map((part, index) =>
+                              part.toLowerCase() ===
+                              cleanSearch.toLowerCase() ? (
+                                <span key={index} className="text-[#3E63A5]">
+                                  {part}
+                                </span>
+                              ) : (
+                                part
+                              ),
+                            );
+                          };
 
+                          return (
+                            <li key={item.id} className="list-none">
+                              <Link
+                                href={`/tempproject/${item.id}`}
+                                className="flex items-center gap-4 leading-5"
+                              >
+                                <Image
+                                  width={48}
+                                  height={48}
+                                  src={item.icon}
+                                  className="w-6 h-6 md:w-12 md:h-12"
+                                  alt="Link Icon"
+                                />
+                                <p className="leading-5 md:leading-6 md:text-[24px] lg:text-[32px] lg:leading-12 text-black">
+                                  {renderHighlightedText(item.text)}
+                                </p>
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
-          )
-        }
+          </div>
+        )}
       </div>
       <div className="flex items-center w-full mx-auto max-w-300 xl:py-6  lg:py-5 lg:px-6 xl:px-0 p-4 font-mecomisce lg:text-[24px] text-[20px] leading-6 justify-between">
         <Link href={"/"}>
@@ -276,11 +303,12 @@ const Header = () => {
           </ul>
         </nav>
         <div className="flex lg:gap-8 gap-5">
-
-          <button onClick={() => {
-            setIsSearchOpen((prev) => !prev)
-            setIsMenuOpen(false)
-          }}>
+          <button
+            onClick={() => {
+              setIsSearchOpen((prev) => !prev);
+              setIsMenuOpen(false);
+            }}
+          >
             <SearchIcon
               className="
             lg:w-12
@@ -295,7 +323,6 @@ const Header = () => {
             "
             />
           </button>
-
 
           <div
             onClick={handleLanguage}
@@ -372,8 +399,8 @@ const Header = () => {
           <div
             className="cursor-pointer md:hidden block"
             onClick={() => {
-              setIsMenuOpen((prev) => !prev)
-              setIsSearchOpen(false)
+              setIsMenuOpen((prev) => !prev);
+              setIsSearchOpen(false);
             }}
           >
             <Image
@@ -387,10 +414,11 @@ const Header = () => {
       </div>
       <div
         className={`z-50 md:hidden absolute top-full w-full bg-white transition-all duration-300 overflow-y-auto p-4
-                    ${isMenuOpen
-          ? "opacity-100 h-[calc(100vh-100%)]"
-          : "h-0 opacity-0"
-          }`}
+                    ${
+                      isMenuOpen
+                        ? "opacity-100 h-[calc(100vh-100%)]"
+                        : "h-0 opacity-0"
+                    }`}
       >
         <nav>
           <ul className="flex flex-col gap-4 font-mecomisce text-[24px] leading-6">
@@ -401,7 +429,11 @@ const Header = () => {
               height={144}
             />
             <li className="px-6 py-4">
-              <Link className="hover:text-[#4D7CCE] duration-200 " href="/ka" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                className="hover:text-[#4D7CCE] duration-200 "
+                href="/ka"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {"მთავარი".toUpperCase()}
               </Link>
             </li>
@@ -413,7 +445,11 @@ const Header = () => {
               className="w-full "
             />
             <li className="px-6 py-4">
-              <Link className="hover:text-[#4D7CCE] duration-200 " href="/ka/#about-us" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                className="hover:text-[#4D7CCE] duration-200 "
+                href="/ka/#about-us"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {"ჩვენ შესახებ".toUpperCase()}
               </Link>
             </li>
@@ -425,7 +461,11 @@ const Header = () => {
               className="w-full "
             />
             <li className="px-6 py-4">
-              <Link className="hover:text-[#4D7CCE] duration-200 " href="/ka/project" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                className="hover:text-[#4D7CCE] duration-200 "
+                href="/ka/project"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {"პროექტები".toUpperCase()}
               </Link>
             </li>
