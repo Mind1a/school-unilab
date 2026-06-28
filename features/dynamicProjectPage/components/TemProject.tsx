@@ -11,7 +11,6 @@ import time from "../../../public/images/TemProject/icons/time-icon.png";
 import duration from "../../../public/images/TemProject/icons/duration-icon.png";
 import location from "../../../public/images/TemProject/icons/location-icon.png";
 import arrow from "../../../public/images/TemProject/icons/arrow-icon.png";
-import ArrowRight from "../../../public/images/TemProject/arrow-right.svg";
 
 type DescriptionParagraph = { id: number; text: string };
 
@@ -160,11 +159,21 @@ const TemProject = () => {
             <ol className="flex items-center gap-2 font-light font-sans mb-4 p-2">
               <li>პროექტები</li>
               <li aria-hidden="true">
-                <ArrowRight width={6} height={11} />
+                <Image
+                  src="/images/TemProject/arrow-right.svg"
+                  alt=""
+                  width={7}
+                  height={12}
+                />
               </li>
               <li>ვორკშოპები</li>
               <li aria-hidden="true">
-                <ArrowRight width={6} height={11} />
+                <Image
+                  src="/images/TemProject/arrow-right.svg"
+                  alt=""
+                  width={7}
+                  height={12}
+                />
               </li>
               <li>ვიზუალური პროგრამირების ვორკშოპი</li>
             </ol>
