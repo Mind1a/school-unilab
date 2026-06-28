@@ -62,7 +62,7 @@ const SOCIAL_ICONS: SocialDataType[] = [
   {
     id: 4,
     href: "/",
-    image: "/images/footerImages/svg/linkedin.svg",
+    image: "/images/footerImages/svg/linkedIn.svg",
     alt: "Linkedin icon",
   },
   {
