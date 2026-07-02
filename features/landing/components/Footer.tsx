@@ -179,26 +179,30 @@ export default function Footer() {
                   />
 
                   <div className="flex items-center gap-2.5">
-                    <Image
-                      width={100}
-                      height={100}
-                      src={"/images/footerImages/svg/unilab.svg"}
-                      className="w-11.75 h-15.25 md:w-14.25 md:h-18.5"
-                      alt="Unilab logo"
-                    />
-                    <Image
-                      width={100}
-                      height={100}
-                      src={"/images/footerImages/svg/iliauni.svg"}
-                      className="w-16 h-16 md:w-19.25 md:h-19.25"
-                      alt="Iliauni logo"
-                    />
+                    <Link href={'https://unilab.iliauni.edu.ge/'} target="_blank">
+                      <Image
+                        width={100}
+                        height={100}
+                        src={"/images/footerImages/svg/unilab.svg"}
+                        className="w-11.75 h-15.25 md:w-14.25 md:h-18.5"
+                        alt="Unilab logo"
+                      />
+                    </Link>
+                    <Link href={'https://iliauni.edu.ge/en/'} target="_blank">
+                      <Image
+                        width={100}
+                        height={100}
+                        src={"/images/footerImages/svg/iliauni.svg"}
+                        className="w-16 h-16 md:w-19.25 md:h-19.25"
+                        alt="Iliauni logo"
+                      />
+                    </Link>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-4 text-black">
                   <h2 className="text-[20px] leading-10 font-mecomisce">
-                    {"საკონტაქტორ ინფორმაცია".toUpperCase()}
+                    {"საკონტაქტო ინფორმაცია".toUpperCase()}
                   </h2>
                   <div className="flex flex-col gap-4">
                     {CONTACT_DATA.map((contact) => (

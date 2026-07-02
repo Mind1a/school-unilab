@@ -77,7 +77,7 @@ export default function HeroSection() {
               </p>
 
             </div>
-            <Link href={'/project'} className="w-full text-[20px]
+            <Link href={'/TempProject'} className="w-full text-[20px]
              justify-center
               gap-2 py-3
                leading-6

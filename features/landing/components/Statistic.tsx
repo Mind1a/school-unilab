@@ -48,7 +48,7 @@ const StatisticChild = ({
   return (
     <article
       aria-label={fullLabel}
-      className="flex flex-col  font-mecomisce items-center md:max-w-62.5 xl:max-w-[384px] w-full text-center"
+      className="flex flex-col text-[#000000]  font-mecomisce items-center md:max-w-62.5 xl:max-w-[384px] w-full text-center"
     >
       <div
         className={`${imageClassName} h-40 md:h-30 lg:h-50 relative mb-4 lg:mb-14`}

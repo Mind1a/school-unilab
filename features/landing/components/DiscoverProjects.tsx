@@ -42,7 +42,7 @@ const DiscoverProjects = () => {
     <section className="mt-18  flex w-full my-18 lg:my-40  justify-center px-4 pb-4 md:px-6 lg:mt-14 ">
       <div className="flex w-full  max-w-300  flex-col items-center">
         <header className="flex min-h-12 w-full items-center justify-center lg:min-h-14.5">
-          <h2 className="font-mecomisce text-[24px] leading-6 md:text-[32px] lg:text-[48px] lg:leading-none">
+          <h2 className="font-mecomisce text-[24px] leading-6 md:text-[32px] text-[#000000] lg:text-[48px] lg:leading-none">
             {"აღმოაჩინე ახალი პროექტები".toUpperCase()}
           </h2>
         </header>
@@ -90,18 +90,18 @@ const DiscoverProjects = () => {
 
 const Card = ({ project }: { project: Project }) => {
   return (
-    <li className="w-[280px] pl-2 shrink-0 snap-center md:w-full md:max-w-[384px]">
+    <li className="w-70 pl-2 shrink-0 snap-center md:w-full md:max-w-[384px]">
       <article className="flex flex-col  w-full h-full rounded-2xl overflow-hidden bg-white border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)]">
-        <div className="relative w-full aspect-[4/3]  overflow-hidden shrink-0">
+        <div className="relative w-full aspect-4/3  overflow-hidden shrink-0">
           <Image
             src={project.image}
             alt={project.title}
             fill
             className="object-cover"
           />
-          <div className="absolute top-2 left-2 lg:top-4 left-4 flex items-center justify-center w-28.25 h-7.5 lg:w-30.5 lg:h-9 rounded-3xl bg-[rgba(148,176,226,1)] border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <div className="absolute top-2 left-2 lg:top-4 flex items-center justify-center w-28.25 h-7.5 lg:w-30.5 lg:h-9 rounded-3xl bg-[rgba(148,176,226,1)] border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)]">
             <Image src="/images/discover-projects/hat.svg" alt="" width={20} height={20} />
-            <span className="ml-2 text-[16px]">კურსები</span>
+            <span className="ml-2 text-[16px] text-[#000000]">კურსები</span>
           </div>
         </div>
 
@@ -109,7 +109,7 @@ const Card = ({ project }: { project: Project }) => {
         <div className="flex flex-col justify-between flex-1 w-full p-4 lg:p-6 bg-white gap-y-4">
 
           <div className="w-full">
-            <h3 className="text-[16px] md:text-[14px] lg:text-[20px] leading-5 pb-1 md:leading-6 line-clamp-2">
+            <h3 className="text-[16px] text-[#000000] md:text-[14px] lg:text-[20px] leading-5 pb-1 md:leading-6 line-clamp-2">
               {project.title}
             </h3>
           </div>
