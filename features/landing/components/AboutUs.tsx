@@ -45,8 +45,8 @@ const AboutUs = () => {
           />
 
 
-          <div className="flex w-full  min-w-0 max-w-191.5  lg:max-w-[70%] xl:max-w-191.5 flex-col items-start gap-4 lg:gap-6  xl:pl-0">
-            <h2 className="lg:text-[40px] sm:text-[32px] text-[20px] lg:leading-16 leading-12 font-bold font-mecomisce">
+          <div className="flex w-full text-[#000000]  min-w-0 max-w-191.5  lg:max-w-[70%] xl:max-w-191.5 flex-col items-start gap-4 lg:gap-6  xl:pl-0">
+            <h2 className="lg:text-[40px] text-[#000000] sm:text-[32px] text-[20px] lg:leading-16 leading-12 font-bold font-mecomisce">
               {"ჩვენ შესახებ".toUpperCase()}
             </h2>
 

@@ -179,35 +179,40 @@ export default function Footer() {
                   />
 
                   <div className="flex items-center gap-2.5">
-                    <Image
-                      width={100}
-                      height={100}
-                      src={"/images/footerImages/svg/unilab.svg"}
-                      className="w-11.75 h-15.25 md:w-14.25 md:h-18.5"
-                      alt="Unilab logo"
-                    />
-                    <Image
-                      width={100}
-                      height={100}
-                      src={"/images/footerImages/svg/iliauni.svg"}
-                      className="w-16 h-16 md:w-19.25 md:h-19.25"
-                      alt="Iliauni logo"
-                    />
+                    <Link href={'https://unilab.iliauni.edu.ge/'} target="_blank">
+                      <Image
+                        width={100}
+                        height={100}
+                        src={"/images/footerImages/svg/unilab.svg"}
+                        className="w-11.75 h-15.25 md:w-14.25 md:h-18.5"
+                        alt="Unilab logo"
+                      />
+                    </Link>
+                    <Link href={'https://iliauni.edu.ge/en/'} target="_blank">
+                      <Image
+                        width={100}
+                        height={100}
+                        src={"/images/footerImages/svg/iliauni.svg"}
+                        className="w-16 h-16 md:w-19.25 md:h-19.25"
+                        alt="Iliauni logo"
+                      />
+                    </Link>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-4 text-black">
                   <h2 className="text-[20px] leading-10 font-mecomisce">
-                    {"საკონტაქტორ ინფორმაცია".toUpperCase()}
+                    {"საკონტაქტო ინფორმაცია".toUpperCase()}
                   </h2>
                   <div className="flex flex-col gap-4">
                     {CONTACT_DATA.map((contact) => (
                       <Link
                         key={contact.id}
-                        className="flex  items-center gap-3 leading-5"
+                        className="flex  items-center gap-3 leading-5 group hover:text-white duration-200"
                         href={contact.href}
                       >
                         <Image
+                          className="group-hover:filter group-hover:invert group-hover:brightness-200 duration-200"
                           width={24}
                           height={24}
                           src={contact.image}
@@ -229,8 +234,9 @@ export default function Footer() {
 
                 <div className="flex items-center gap-6">
                   {SOCIAL_ICONS.map((social) => (
-                    <Link key={social.id} href={social.href}>
+                    <Link className="group" key={social.id} href={social.href}>
                       <Image
+                        className="group-hover:filter group-hover:invert group-hover:brightness-200 duration-200"
                         width={40}
                         height={40}
                         src={social.image}
@@ -242,7 +248,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="absolute w-full left-0 bottom-0 h-20 pointer-events-none z-50">
+          <div className="absolute w-full  left-0 bottom-0 h-20 pointer-events-none z-50">
             <svg
               className="w-full h-full"
               viewBox="0 0 140 70"
@@ -259,7 +265,7 @@ export default function Footer() {
             </svg>
           </div>
 
-          <div className="absolute h-full right-0 top-0 w-10 md:w-16 xl:w-20 pointer-events-none z-50">
+          <div className="absolute h-full  right-0 top-0 w-10 md:w-16 xl:w-20 pointer-events-none z-50">
             <svg
               className="w-full h-full"
               viewBox="0 0 40 100"

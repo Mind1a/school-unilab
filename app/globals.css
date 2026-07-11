@@ -33,4 +33,23 @@ body {
     font-family: var(--font-mecomisce), sans-serif;
   }
 
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px; /* სქროლბარის სიგანე */
+    height: 8px; /* ჰორიზონტალური სქროლბარის სიმაღლე */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1; /* სქროლის ბილიკის ფონი */
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4D7CCE; /* თავად სქროლერის ფერი */
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #3e63a5; /* ფერი ჰოვერზე */
+  }
+
 }
