@@ -117,6 +117,7 @@ const TemProject = () => {
   const isManualScrolling = useRef(false);
 
   const totalDots = mockWorkshops.length;
+  const [isProjectActive, setIsProjectActive] = useState(false)
 
   const handleScroll = () => {
     if (!scrollContainerRef.current || isManualScrolling.current) return;
@@ -214,12 +215,16 @@ const TemProject = () => {
             ))}
           </div>
 
-          <button className="flex items-center justify-center gap-2 bg-[#F87060] px-3 py-3.5 rounded-full text-xl md:text-2xl border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] font-mecomisce mt-[20px] md:mt-[32px] lg:mt-[48px] cursor-pointer w-full md:w-auto hover:bg-[#7196D8]">
-            <span>{"დარეგისტრირდი ახლავე".toUpperCase()}</span>
-            <div className="w-6 h-6 flex items-center justify-center shrink-0">
-              <Image width={24} height={24} src={arrow} alt="" aria-hidden="true" />
-            </div>
-          </button>
+          {
+            isProjectActive && (
+              <button className="flex items-center justify-center gap-2 bg-[#F87060] px-3 py-3.5 rounded-full text-xl md:text-2xl border-2 border-black shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] font-mecomisce mt-[20px] md:mt-[32px] lg:mt-[48px] cursor-pointer w-full md:w-auto hover:bg-[#7196D8]">
+                <span>{"დარეგისტრირდი ახლავე".toUpperCase()}</span>
+                <div className="w-6 h-6 flex items-center justify-center shrink-0">
+                  <Image width={24} height={24} src={arrow} alt="" aria-hidden="true" />
+                </div>
+              </button>
+            )
+          }
         </article>
 
         {/* სლაიდერის სექცია */}

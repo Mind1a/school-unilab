@@ -5,12 +5,12 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {useState
 } from "react";
 import { projectFilters } from "./filters";
+import { useUiStore } from "@/store/useUiStore";
 
-type ProjectActiveBtnProps = {
-  onFilterClick: () => void;
-};
 
-const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
+
+const ProjectActiveBtn = () => {
+  const {toggleFilter} = useUiStore()
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -21,7 +21,7 @@ const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
 
   const selectedFilters = searchParams.getAll("category");
 
-  const toggleFilter = (value: string) => {
+  const onFilterClick = (value: string) => {
     const params = new URLSearchParams(searchParams.toString());
     const currentCategories = params.getAll("category");
     const isAlreadySelected = currentCategories.includes(value);
@@ -53,7 +53,7 @@ const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
           <button
             type="button"
             aria-label="Close filter"
-            onClick={onFilterClick}
+            onClick={() => toggleFilter(false)}
             className="flex h-12 w-12 items-center justify-center"
           >
             <Image
@@ -88,7 +88,7 @@ const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
               <button
                 key={filter.id}
                 type="button"
-                onClick={() => toggleFilter(filter.value)}
+                onClick={() => onFilterClick(filter.value)}
                 onMouseEnter={() => setHoveredFilter(filter.value)}
                 onMouseLeave={() => setHoveredFilter(null)}
                 className="flex items-center gap-4"
@@ -118,7 +118,7 @@ const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
         <button
           type="button"
           aria-label="Filter projects"
-          onClick={onFilterClick}
+          onClick={() => toggleFilter(false)}
           className="group order-2 flex  shrink-0 cursor-pointer items-center justify-center rounded-[64px] border-2 border-black bg-white shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)] hover:border-[rgba(77,124,206,1)] hover:shadow-[-4px_4px_0px_0px_rgba(77,124,206,1)] md:order-1  xl:px-6"
         >
           <span className="mr-2 hidden font-mecomisce text-[24px]  leading-5 group-hover:text-[rgba(77,124,206,1)] lg:inline xl:text-[24px] xl:leading-6">
@@ -158,7 +158,7 @@ const ProjectActiveBtn = ({ onFilterClick }: ProjectActiveBtnProps) => {
             <button
               key={filter.id}
               type="button"
-              onClick={() => toggleFilter(filter.value)}
+              onClick={() => onFilterClick(filter.value)}
               onMouseEnter={() => setHoveredFilter(filter.value)}
               onMouseLeave={() => setHoveredFilter(null)}
               className="flex cursor-pointer items-center gap-3"

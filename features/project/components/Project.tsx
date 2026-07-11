@@ -1,17 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import {  useEffect, useState } from "react";
+import {  useEffect } from "react";
 import Pagination from "./Pagination";
 import ProjectActiveBtn from "./ProjectActiveBtn";
 import { projectsData } from "./data";
+import { useUiStore } from "@/store/useUiStore";
 
 const Project = () => {
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-
-  const toggleFilter = () => {
-    setIsFilterOpen((prev) => !prev);
-  };
+  const {isFilterOpen, toggleFilter} = useUiStore()
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,7 +18,7 @@ const Project = () => {
   return (
     <div className={`max-w-300 px-4 md:px-6 lg:px-8 xl:px-0 mb-26 mx-auto w-full flex flex-col mt-30  items-start xl:mt-40`}>
       {isFilterOpen ? (
-        <ProjectActiveBtn onFilterClick={toggleFilter} />
+        <ProjectActiveBtn  />
       ) : (
           <div className="flex items-center justify-between md:justify-start w-full">
             <h2 className="order-1  md:text-nowrap font-mecomisce text-[24px] leading-6 md:order-2 md:ml-4.75 md:text-[32px] md:leading-12 lg:ml-8.25 xl:text-[48px] lg:leading-14">
@@ -31,7 +28,7 @@ const Project = () => {
           <button
             type="button"
             aria-label="Filter projects"
-            onClick={toggleFilter}
+              onClick={() => toggleFilter(!isFilterOpen)}
             className="group order-2 flex h-12 w-12 shrink-0 cursor-pointer items-center justify-center rounded-full border-2 border-black bg-white shadow-[-4px_4px_0px_0px_rgba(0,0,0,1),-8px_8px_4px_0px_rgba(0,0,0,0.25)] hover:border-[rgba(77,124,206,1)] hover:shadow-[-4px_4px_0px_0px_rgba(77,124,206,1)] md:order-1 lg:h-18 lg:w-18"
           >
             <Image
